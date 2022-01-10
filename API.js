@@ -254,3 +254,4 @@ alert('Do you have ITIL role? ' + g_user.hasRole('itil'));
 //userName
 alert('Your user name is ' + g_user.userName);
 
+This is new file
