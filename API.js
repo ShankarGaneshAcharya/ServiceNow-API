@@ -263,26 +263,31 @@ alert('Your user name is ' + g_user.userName);
 //Converting between date/time formats
 
 //GlideDateTime Method
-// add()
-// addDaysUTC()
-// addMonthsUTC()
-// addSeconds()
-// addWeeksUTC()
-// addYearsUTC()
-// after()
-// Before()
-// compareTo()
-// equals()
-// getDate()
-// getDayOfMonthUTC()
+// add() - adds miliseconds to GlideDateTime object
+// addDaysUTC() - adds days to GlideDateTime object
+// addMonthsUTC() - adds months to GlideDateTime object
+// addSeconds() - adds seconds to GlideDateTime object
+// addWeeksUTC() - adds weeks to GlideDateTime object
+// addYearsUTC() - adds miliseconds to GlideDateTime object
+// after() - compares to Glide Date Time to each other
+// Before() - compares to Glide Date Time to each other
+// compareTo() - 
+// equals() -
+// getDate() - Which will return date stored in the daytime object
+// getDayOfMonthUTC() - 
 // getLocalTime()
 // getMonthUTC()
 // getTime()
 // getWeekOfYearUTC()
 // getYearUTC()
-// isValid()
-// onOrAfter()
+// isValid() - which will test if the glide date time object is valid
+// onOrAfter()  
 // onOrBefore()
-// subtract()
+// subtract() - This method will return the difference in days, minutes and or seconds between the two dates.
 
+var start = new GlideDateTime('2017-01-01 09:00:00');
+var end = new GlideDateTime('2017-01-07 08:00:00');
+var difference = GlideDateTime.subract(start,end);
+gs.print(difference.getDisplayValue());
+//output will be 5 Days 23 Hours
 
