@@ -324,3 +324,51 @@ gs.print('New Value: ' + gdt);
 
 //before() - we get boolean value
 
+
+
+
+
+//GlideElement
+//getDisplayValue Method
+//copy the incident sys_id
+//Direct access
+var incidentGR = new GlideRecord('incident');
+incidentGR.get('46b9490da9fe1981003c938dab89bda3')
+gs.print(incidentGR.caller_id);
+//output will be 5137153cc611227c000bbd1bd8cd2005
+
+//toString Method
+var incidentGR = new GlideRecord('incident');
+incidentGR.get('46b9490da9fe1981003c938dab89bda3')
+gs.print(incidentGR.caller_id.toString());
+//output will be 5137153cc611227c000bbd1bd8cd2005
+
+//getDisplayValue
+var incidentGR = new GlideRecord('incident');
+incidentGR.get('46b9490da9fe1981003c938dab89bda3')
+gs.print(incidentGR.caller_id.getDisplayValue());
+//output will be Fred Luddy
+
+//GetHTMLValue() Method
+//copy sys_id of KBArticle
+
+var kbArticleGR = new GlideRecord('kb_knowledge');
+kbArticleGR.get('72b8203987600110c5e4986d3fbb358e');
+gs.print(kbArticleGR.text.getHTMLValue());
+
+
+//getJournalEntry() Method
+var incidentGR = new GlideRecord('incident');
+incidentGR.get('46b9490da9fe1981003c938dab89bda3')
+gs.print(incidentGR.comments.getJournalEntry(-1));
+// -1 which wil print all comments stored in the journal field
+
+//nil() Method
+var incidentGR = new GlideRecord('incident');
+incidentGR.query();
+while(incidentGR.next()){
+  if(incidentGR.short_description.nill()){
+    gs.print(incidentGR.number);
+  }
+}
+//Prints all of the incident numbers whose short description is nill or null
