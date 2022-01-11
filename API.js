@@ -291,3 +291,36 @@ var difference = GlideDateTime.subract(start,end);
 gs.print(difference.getDisplayValue());
 //output will be 5 Days 23 Hours
 
+//Prints the current time
+var gdt = new GlideDateTime();
+gs.print(gdt);
+
+
+//addDaysUTC()
+var gdt = new GlideDateTime();
+gs.print('Now: ' + gdt);
+gdt.addDaysUTC(3);
+gs.print('New Value: ' + gdt);
+//Now: 2022-01-11 08:55:44
+//New Value: 2022-01-14 08:55:44
+//New Value represents 3 days in future
+
+//addMonthsUTC()
+var gdt = new GlideDateTime();
+gs.print('Now: ' + gdt);
+gdt.addMonthsUTC(3);
+gs.print('New Value: ' + gdt);
+//Now: 2022-01-11 09:00:03
+//New Value: 2022-01-14 09:00:03
+//New Value represents 3 Months in future
+
+var gdt = new GlideDateTime();
+gs.print('Now: ' + gdt);
+gdt.addYearsUTC(3);
+gs.print('New Value: ' + gdt);
+//Now: 2022-01-11 09:01:12
+//New Value: 2025-01-11 09:01:12
+//New Value represents 3 Years in future
+
+//before() - we get boolean value
+
