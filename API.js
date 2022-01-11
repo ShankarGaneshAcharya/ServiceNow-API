@@ -254,3 +254,28 @@ alert('Do you have ITIL role? ' + g_user.hasRole('itil'));
 //userName
 alert('Your user name is ' + g_user.userName);
 
+
+
+//GlideDate Time Method
+// add()
+// addDaysUTC()
+// addMonthsUTC()
+// addSeconds()
+// addWeeksUTC()
+// addYearsUTC()
+// after()
+// Before()
+// compareTo()
+// equals()
+// getDate()
+// getDayOfMonthUTC()
+// getLocalTime()
+// getMonthUTC()
+// getTime()
+// getWeekOfYearUTC()
+// getYearUTC()
+// isValid()
+// onOrAfter()
+// onOrBefore()
+// subtract()
+
