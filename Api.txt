@@ -3,3 +3,211 @@ https://www.youtube.com/watch?v=SW3emX9TJ4g
 How to Use GitHub with Visual Studio Code | Commit, Publish, Push and Clone using VS Code and GitHub
 
 BoostMyTool
+
+https://www.plat4mation.com/servicenow/everything-you-need-to-know-about-servicenow/
+
+About servicenow
+
+What is ServiceNow?
+ServiceNow is a cloud-based SaaS (Software-as-a-Service) platform that automates organizational processes and delivers a consistent, consumer-like experience. It is a comprehensive development environment in which you can build, test and implement applications that provide automated workflows for challenges such as case management, operations management and services management.
+
+What makes this platform unique? 
+As a cloud-based platform, ServiceNow enables smooth integration of legacy software. The platform offers connected digital workflows that make work, work better for people and business operations. On top of that, ServiceNow has been built as native mobile experience, offering insightful, easy and consumer-like experiences. Its service apps deliver the insights employees need to be their best and boost productivity.
+
+Enterprise-wide solution
+ServiceNow’s networked, easy-to-use IT and enterprise support system extends to every corner of an organization. Its services help connect every department—from human resources and security to customer service, marketing, legal, finance and facilities—to one shared online database where an organization can analyze and act on information.
+
+With ServiceNow, old and manual ways of working are transformed into digital workflows. It makes it fast and easy to request services, automate routine tasks or interact with other departments. In other words, ServiceNow provides a platform for all service departments to easily access the services they offer to employees.
+
+For example, employees can use ServiceNow to:
+
+Create a purchase request to hire a recruiter
+Book a meeting room for a job interview
+Ask for a contract review by Legal
+Initiate employee onboarding at HR
+Request a new iPhone from IT
+And much, much more!
+
+The ultimate goal is to enhance the quality of the lives of people at work, whether you’re an IT help-desk professional or an end user. It is not technology in service of technology, but the always-on engine behind an employee’s work life, from the moment he or she is hired. It’s the intuitive, enjoyable employee experience that allow people to do what they need to do in just one click.
+
+ 
+
+Just some of the platform’s capabilities:
+
+Make work easier for everyone — ServiceNow offers an intuitive mobile experience to all end users. As easy to use as the consumer apps that people have become used to in their daily lives. With ServiceNow employees and customers can find answers and get stuff done—right across IT, HR, facilities, finance, legal, and other departments—with an app powered by a single cloud platform with a common data model. In fact, the common data model enables easy consolidation of approvals for to-dos that are tasked across the organization.
+ 
+
+Always available — ServiceNow has a game-changing architecture that supports an always-available, high performance enterprise-grade cloud service.
+
+With ServiceNow, you have your own database and application set. This means you operate independently from any other ServiceNow customer. Data centers are located around the world and ensure access is always available, even during planned maintenance. In fact, over the past 3 years ServiceNow has achieved 99.8% in its average aggregate availability. When ServiceNow is working on your instance, you won’t notice a thing. Is performance remains the same.
+
+ 
+
+Single data source — Using only a single data source, ServiceNow makes it possible to access and leverage company-wide metrics, tasks, services, assets, people, locations, and information from a single user portal. It eliminates the traditional challenges around data integration. Any application on the Now platform, including customer-built applications, come from a single data source. Building on an intelligent automation engine that brings together people processes and automated processes, allows for the creation of powerful workflows.
+ 
+
+Scale to any size — ServiceNow is built on a highly scalable, state-of-the-art cloud infrastructure. With a clustered application and database server architecture, there is no known limit to its scalability. From businesses with 20 people, to those with thousands, ServiceNow CMDB supports and grows with businesses large and small.
+ 
+
+Secure and compliant —Day-1 security, privacy, and compliance are vital to all organizations, regardless of size. The ServiceNow platform provides industry-leading features and services—in a secure, reliable environment—that support your implementations, as well as custom applications and application integrations.
+ 
+
+No-code development — Specifically designed to automate all business processes, non-IT employees can configure ServiceNow using no-code, low-code, and pro-code tools without the support of vendor or third-party consultants. The upgrade process allows product releases, patches and hotfixes without negatively affecting configuration, helping ensure the long-term stability of any changes made by you. All such activities can be done in Day-1 compliance, and complete data security.
+
+What is ServiceNow used for?
+The ServiceNow platform — The easy-to-use development environment
+In many large organizations, finding the best communication channel to get in touch with other internal departments is a difficult task. Yet people need to interact with departments like HR, Facility, Procurement, Legal, IT and more, to ensure they can successfully do the work they are hired to do. The ServiceNow platform is built to create a more consumer-like experience for customers and employees by helping them easily and quickly find the information they need.
+
+The Now platform is used to digitize and automate departmental and cross-departmental workflows. Replacing unstructured work patterns with intelligent workflow automation, ServiceNow enables nearly everyone—from professional coders to those with no coding experience—to digitize and automate workflows as mobile-first applications.
+
+Creating such out-of-the-box, secure workflow applications for IT, customer service or human resources—based on AI-powered knowledge—streamline work and simultaneously measure and optimize your business processes.
+
+ 
+
+Reporting — Intelligently tailored experiences
+You can only improve what you measure. Delivering great experiences is an iterative process, which is rocket-fueled when you have the right data at your disposal. Apply various experience measurement techniques to collect data related to each aspect of your digital experience. For service portals, track behaviors like mouse and eyeball movements, clicks, and drop-offs. Or measure actual usage of features like the Virtual Agent and Knowledge Articles. Through Machine Learning, you can make sure service requests end up at the right agent or department.
+
+Workflows — Automating the menial to boost business outcomes
+Take any day at the office or in your production facilities. How much time do your people loose filling in and waiting for answers or decisions that involve tickets, approvals, requests or events? Things that can be streamlined and automated into workflows, thereby eliminating tedious, repetitive work while achieving better outcomes. Automate routine actions to raise IT satisfaction and productivity. Speed up incident resolution with machine learning and building on transparency and visibility to help you improve your service offering.
+
+ 
+
+A few examples on how easy it is to create end-to-end digital workflows with ServiceNow:
+
+Use codeless flow components to build end-to-end workflows
+Easily create new bespoke components
+Link end-users with systems of record in a great user experience
+ServiceNow modules
+To fully benefit from digitized workflows, it is essential that organizations drive continual improvement in their automated processes. Customers who do so are managing to significantly lower operational costs, reduce process lead times and increase customer satisfaction. With ServiceNow, you get the building blocks to smoothly automate any service management use case.
+
+ 
+
+ServiceNow ITSM — Building the highest quality IT services
+IT Service Management (ITSM) helps you to provide high-quality IT services to ensure consumers of these services—the business—are satisfied. Business users need to focus on doing their work, not spend time solving IT issues. At the same time, providing high-quality IT services should be cost-effective. In reaching these objectives, ServiceNow’s ITSM implementation focuses on 5 key themes:
+
+ 
+
+Provide great experiences – Research shows that effective self-service positively affects customer and employee satisfaction, as well as lowering costs. Build high-quality self-service portals within ServiceNow.
+Continuous improvement – Rank improvement initiatives by ROI and effort.
+Intelligent automation – The native Virtual Agent helps you cut user time and costs per ticket. Users adopt easily to this IT self-service, submitting routine questions and requests to the helpdesk using any device at the time that suits them best.
+High-quality data – The Common Service Data Model (CSDM) is the very backbone of the ServiceNow platform. As best-practice framework, it helps you align IT strategy with your business strategy.
+Staying successful – Use ongoing performance analytics to further boost performance. Real-time performance is easily checked using the ITSM mobile app.
+
+
+CSDM — All about doing CMDB right
+The Common Service Data Model is a best practice framework for CMDB data modeling and data management. It gives you guidance on service modeling and comes with a standard set of terms and definitions. It’s the backbone for the service configuration and connects your CMDB from both a business and technical perspective with recommended mappings and relationships.
+
+Done well, it provides visibility into service and application related data from different domains, consolidated in one single view, enabling you to align your IT strategy with company strategy and capabilities. But that’s not all. A high-quality CMDB brings along many benefits, like faster incident resolution, an improved security vulnerability profile and better judgment of change impact.
+
+ServiceNow GRC — Continuously monitor compliance and risk
+ServiceNow Governance, Risk and Compliance (GRC) provides a real-time view of compliance and risk. Improve decision making and increase performance across your organization and with vendors when you use ServiceNow to transform inefficient processes into an integrated risk program.
+
+ 
+
+Policy and Compliance Management – Create and manage a common controls framework, automate best practice lifecycles, and track the status of its compliance activities on the ServiceNow platform. Make all compliance efforts more organized, simpler, more transparent, and highly reliable in a centralized process for creating and managing policies, standards and internal control procedures.
+ 
+
+Risk Management – Enable the identification, assessment, response and continuous monitoring of risk on a single platform. ServiceNow offers a system in which a standardized, workflow-driven way of working enables all stakeholders to contribute to the GRC organization efficiently and effectively.
+ 
+
+Audit Management – By using risk data to scope, plan and prioritize audit engagements, ServiceNow GRC enables internal audit teams to optimize their resources and productivity and eliminate recurring audit findings.
+
+ServiceNow SecOps — Unified data and processes help identify and remediate vulnerabilities and security breaches fast
+If you use different security tools, like firewalls, end-point security products or Security Information and Event Managers (SIEMs) to collect and prioritize security incidents and are looking to integrate these tools, these together will generate far more alerts than you can handle. Unless you automate. And that’s exactly what ServiceNow does. It is a solution that allows you to track the progress of security incidents from discovery and initial analysis to containment, eradication and recovery, all the way to post-incident review, knowledge base article creation and closure.
+
+With ServiceNow, you can respond faster and more efficiently to vulnerabilities, connect security and IT teams, and provide real-time visibility. You can view your vulnerability status in real-time via customizable dashboards and reports backed by quantitative data.
+
+Connect your existing Cyber Security Management tools with ServiceNow Security Operations to prioritize and respond to incidents and vulnerabilities according to their potential impact on your business. Resolve security incidents and vulnerabilities fast with prioritization, automation and orchestration.
+
+ 
+
+ServiceNow ITBM — Oversee and control IT investments, projects and teams
+How do you measure whether your IT investments are bringing you what you are looking for? How do you allocate your IT resources across projects? Let alone, how do you maximize the business value of your IT? ServiceNow ITBM gives you the transparency required to manage the processes, people and projects related to maximizing the business value of your IT.
+
+Mismatches in IT investments and your business goals can lead to cost overruns and project delays. Often, in such cases, they also lead to a lack of trust in IT.
+
+Aligning IT investments and work to the organization’s goals can help IT support better outcomes and respond more rapidly to change. And it provides a solid foundation for adopting modern project management strategies and ensuring that every IT project supports an organizational objective.
+
+With just one place to capture, evaluate, prioritize, and execute IT demand—rather than having to deal with many silos across your business units—ITBM brings integrated visibility across IT teams. It enables you to deliver value on time and within the approved budgets. ServiceNow handles the full program lifecycle: from initial ideation to final delivery for better decisions and efficient execution.
+
+Showing the business value of IT, investment decisions are transparent with everyone knowing what IT is working on. When a strategic technology investment decision is made, people understand the business drivers behind the decisions and the potential impacts.
+
+ 
+
+ServiceNow DevOps — Maximizing agility AND control
+It has been proven that speed, productivity and innovation are boosted by agile practices and DevOps. The challenge is now on to shift from pockets of innovation to being the basis of enterprise-wide digital transformation. But, as with the scaling of any technology, scaling DevOps has its challenges.
+
+One of the biggest challenges being that while applications are being created fast and even faster, that majority of companies that use DevOps have not seen an increase in the release frequency. The biggest obstacle seems to be governance, risk and compliance and audit issues. To circumvent delays, developers start to side-step risk and control processes. Doing so, puts an organization at risk of unplanned downtime caused by small, unmanaged changes, security breaches and even non-compliance issues.
+
+With ServiceNow DevOps teams and developers can achieve their Agile goals while maintaining quality code, in compliance with regulations and without experiencing system downtime. ServiceNow DevOps provides a platform with a correctly architected environment, designed to automatically combine the intelligence scattered across a disjoined chain of planning, coding, pipeline and execution tools. The platform becomes the sole source of truth for IT, thereby streamlining and maximizing innovation and productivity, with a faster speed to market.
+
+Besides cost savings, ServiceNow DevOps simplifies developers’ work jobs and allows them to focus on the meaningful stuff, instead of chasing and solving GRC and audit-related issues.
+
+ServiceNow ITOM — The single system of record for your IT infrastructure
+Effective IT Operations Management (ITOM) requires an integrated, service-centric approach: one that maximizes business service quality, drives efficient processes, enables innovation, and ensures robust governance. However, many IT teams still wrestle with multiple, unintegrated ITOM tools. As a result, they suffer from service outages and cloud complexity.
+
+IT teams continue to manually stitch together disconnected data from multiple monitoring tools rather than have a clear, real-time view of business service and IT infrastructure health. They struggle to detect, diagnose, and resolve service issues, and the result is yet more frequent and more severe service outages.
+
+Moreover, as the demand for cloud resources grows, so does the complexity to manage them. Cloud challenges include having different systems to manage each cloud environment, inconsistent service catalogs, limited cost and usage visibility of cloud resources, and high expectations from users and businesses that want immediate results. Nevertheless, multi-cloud is quickly becoming the de-facto deployment standard as organizations of all types leverage an ever-increasing variety of cloud computing services.
+
+ServiceNow ITOM delivers a comprehensive and integrated set of ITOM capabilities that build seamlessly on ServiceNow ITSM. Create a single system of record for IT infrastructure across data centers and clouds. A single dashboard proactively identifies IT service issues and possible causes for service downtime before they occur. In a nutshell: with ServiceNow ITOM, IT can proactively eliminate service outages and manage hybrid clouds, including multi-cloud IaaS/PaaS/FaaS services.
+
+ 
+
+ServiceNow ITAM — Building for tomorrow’s use cases
+ServiceNow IT Asset Management gives insight into asset use and costs. Key applications enable you to manage software licenses, hardware assets and cloud resources. The powerful platform capabilities simplify the tracking of your assets across your organization.
+
+ 
+
+Hardware Asset Management
+
+Optimize IT asset visibility – Normalize all hardware to keep a clean CMDB and keep your asset inventory accurate.
+Boost asset workflows – Automate life cycle processes including request, receive, deploy, sway and dispose.
+Cut costs – Minimize waste based on asset insights.
+ 
+
+Software Asset Management
+
+Faster outcomes – Use software data cross-functionally to streamline workflows and speed up business outcomes.
+Reduce risk – Embed SAM into IT change and act on unlicensed deployments.
+Cut costs – Reduce overlap and optimize license use.
+ 
+
+Configuration Management Database (CMDB)
+
+Single source of truth – Break down silos with a single system across all apps and workflows.
+Better data – Use only accurate and certified data for use in any app or workflow.
+Data driven outcomes – Full insight and transparency into risk-based and actual data for informed decision making.
+ 
+
+Discovery   
+
+Transparency – Get complete visibility into your on‑premise and cloud resources.
+Service visibility, health and optimization – Keep track of changes occurring within your on‑premise, cloud, and serverless infrastructure in the CMDB.
+Fast time to value – Set a strong foundation with accurate data and relationship views for ITSM change management, Software Asset Management, Customer Service Management, Security Operations, and more.
+ 
+
+ServiceNow IRM – Linking GRC to your business
+Risk management is not a one-off action. Rather, it is a never-ending process involving regulations and policy changes. Not only internal changes, but also those involving third parties and beyond. The ServiceNow Integrated Risk Management solution combines technology, processes and data that enable the simplification, automation and integration of your strategic, operational and IT risk management across your organization. Where GRC technology provides compliance-driven solutions, IRM goes one step further and offers actionable insights based on your business strategies. It provides a one-stop-shop with an integrated view covering risk, security, IT, as well as the business itself.
+
+With the right workflows in place, ServiceNow IRM continually monitors changes for non-compliance and risk. The mobile-first, intuitive dashboard gives authorized persons or teams real-time access to the central platform in order to manage or mitigate any risks.
+
+Transform inefficient processes across your organization into an integrated risk program.
+Identify non-compliance or emerging risks through continuous monitoring using data collected by all internal systems.
+Automate security and risk response for faster mitigation.
+Align all risk and business objectives.
+ServiceNow Change Management
+The ability to adapt and change as the world in and around your organization changes is key to your business success. Yet, facilitating beneficial changes usually, for many companies, is synonymous with major interruptions to IT services.
+
+ServiceNow Change Management offers full control of the life cycle of all changes—from creation, risk-assessment, conflict detection, through to approval—with minimum disruption to your IT services.
+
+Besides the standard workflow, the Change Management platform includes analytical tools that allow you to visualize your business processes and identify possible issues or risks using automated risk assessment.
+
+Analyze change impacts at a glance with service maps.
+For complex changes automatically plan Change Advisory Board meetings.
+Automatically approve low-risk changes using built-in Change Success Score.
+Minimize failed changes and cost per change with automated risk assessment and conflict detection.
+Integrate change processes across IT within a single platform of all planned changes. Concurrent change management with a timeline or calendar.
+See what has been changed on the backlog analysis dashboard.
+Mirroring the ITSM Plan-Do-Check-Act cycle, Change Management is focused on continuous, integrated, incremental changes across IT that bring with them shorter process lead times, lower costs and empowered developers who benefit from automatic approval for low-risk changes.
+
