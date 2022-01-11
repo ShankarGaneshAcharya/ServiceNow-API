@@ -254,9 +254,15 @@ alert('Do you have ITIL role? ' + g_user.hasRole('itil'));
 //userName
 alert('Your user name is ' + g_user.userName);
 
+//GlideDateTime Method - Server Side
+//The scoped GlideDateTime class provides methods for performing operations on GlideDateTime objects, such as instantiating GlideDateTime objects or working with glide_date_time fields.
 
+//Used for
+//Date/time operations
+//Formatting date/time
+//Converting between date/time formats
 
-//GlideDate Time Method
+//GlideDateTime Method
 // add()
 // addDaysUTC()
 // addMonthsUTC()
@@ -278,4 +284,5 @@ alert('Your user name is ' + g_user.userName);
 // onOrAfter()
 // onOrBefore()
 // subtract()
+
 
