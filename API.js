@@ -254,6 +254,7 @@ alert('Do you have ITIL role? ' + g_user.hasRole('itil'));
 //userName
 alert('Your user name is ' + g_user.userName);
 
+
 //GlideDateTime Method - Server Side
 //The scoped GlideDateTime class provides methods for performing operations on GlideDateTime objects, such as instantiating GlideDateTime objects or working with glide_date_time fields.
 
@@ -328,7 +329,14 @@ gs.print('New Value: ' + gdt);
 
 
 
-//GlideElement
+//GlideElement - Server Side
+// The Scoped GlideElement API provides a number of convenient script methods for dealing with fields and their values. Scoped GlideElement methods are available for the fields of the current GlideRecord.
+//GlideRecord and GlideElement go hand in hand
+
+//Used for
+////Accessing GlideRecords fields
+////Manipulating GlideRecord fields
+
 //getDisplayValue Method
 //copy the incident sys_id
 //Direct access
@@ -351,7 +359,6 @@ gs.print(incidentGR.caller_id.getDisplayValue());
 
 //GetHTMLValue() Method
 //copy sys_id of KBArticle
-
 var kbArticleGR = new GlideRecord('kb_knowledge');
 kbArticleGR.get('72b8203987600110c5e4986d3fbb358e');
 gs.print(kbArticleGR.text.getHTMLValue());
@@ -374,6 +381,64 @@ while(incidentGR.next()){
 //Prints all of the incident numbers whose short description is nill or null
 
 
-//Glideajax
-//pending on 11 Jan 2021
-//Not available
+//XMLDocument2 API - Serverside APi so we cannot use on client Side
+
+//XMLDocument2 is a JavaScript Object Wrapper for parsing and extracting XML data from an XML string
+
+//Used for 
+//Working with XML documents & nodes
+
+var xmlString = 'Paste xml snippet'
+var xmlDoc = new XMLDocument2();
+xmlDoc.parseXML(xmlString);
+gs.print(xmlDoc.getNodeText('//active'))
+
+//We can also create new element on XML document
+var xmlString = 'Paste xml snippet'
+var xmlDoc = new XMLDocument2();
+xmlDoc.parseXML(xmlString);
+xmlDoc.createElement('pet');
+gs.print(xmlDoc);
+//Pet node will be created in XML snippet
+
+//We can also create new element with some text value on XML document
+var xmlString = 'Paste xml snippet'
+var xmlDoc = new XMLDocument2();
+xmlDoc.parseXML(xmlString);
+xmlDoc.createElementWithTextValue('pet', 'Oscar');
+gs.print(xmlDoc);
+//We will see start and end Pet node with value in between will be created in XML snippet
+
+//Get first node method
+var xmlString = 'Paste xml snippet'
+var xmlDoc = new XMLDocument2();
+xmlDoc.parseXML(xmlString);
+gs.print(xmlDoc.getFirstNode('/xml/incident'));
+
+
+
+///Other APIs and Undocumented APIs////
+//Documented APIs
+//GlideModal - used for Pop ups in SericeNow
+//Workflow - 
+//GlideSysAttachment - used to work with attachments
+//RestMessageV2 - 
+//RestResponseV2 -
+//SOAPMessageV2 -
+//SOAPResponseV2 -
+//GlideDuration -
+
+////Undocumented APIs/// - script Includes or Server Scripts
+// JSUtils
+// Workflow
+// DiscoveryCMDBUtil
+// AssetandCI
+// CMDBItem
+// SNC
+// GlideStringUtil
+// Cart
+// SPCart
+
+
+////Creating Our Own API////
+

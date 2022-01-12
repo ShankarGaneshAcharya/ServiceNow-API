@@ -19,3 +19,20 @@ Asynchronous
 When you execute something asynchronously, you can move on to another task before it finishes
 
 Asynchronous means that you can execute multiple things at a time
+
+
+getLatestIncidents: function(num){
+		var limit = num || 5;
+		var results = [];
+		var incidentGR = new GlideRecord('incident');
+		incidentGR.orderByDesc('sys_created_on');
+		incidentGR.setLimit(limit);
+		incidentGR.query();
+		while(incidentGR.next()){
+			results.push(incidntGR.number.getDisplayValue());
+			}
+		return results;
+	},
+
+var incidents = new IncidentUtils().getLatestIncidents(10);
+gs.print(incidents);
