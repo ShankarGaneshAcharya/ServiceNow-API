@@ -211,3 +211,14 @@ Integrate change processes across IT within a single platform of all planned cha
 See what has been changed on the backlog analysis dashboard.
 Mirroring the ITSM Plan-Do-Check-Act cycle, Change Management is focused on continuous, integrated, incremental changes across IT that bring with them shorter process lead times, lower costs and empowered developers who benefit from automatic approval for low-risk changes.
 
+https://readme.so/editor
+
+https://www.youtube.com/watch?v=Rtpu2cWz7W8
+Video on readme
+Pinned by CodeWithHarry
+
+
+https://www.youtube.com/watch?v=ZmGW45eZOg8
+gitignore in Visual Studio Code
+Video on gitignore
+By Alejandro Magnitopic
