@@ -1,0 +1,21 @@
+GlideAjax Introduction
+GlideAjax class enables a client script to call server-side code in a script include.
+
+client-side
+Used to call server-side Script includes
+Similar to JQuery's ajax method
+
+AJAX Asynchronous JavaScript and XML
+
+
+Synchronous & Asynchronous
+
+Synchronous
+When you execute something synchronously, you wait for it to finish before moving on to another task. 
+
+Synchronous basically means that you can only execute one thing at a time.
+
+Asynchronous
+When you execute something asynchronously, you can move on to another task before it finishes
+
+Asynchronous means that you can execute multiple things at a time
