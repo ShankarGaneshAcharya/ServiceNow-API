@@ -16,36 +16,56 @@
 // canRead() - 
 // canDelete() - 
 
+//This will print all of the incident Numbers
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 while(incidentGR.next()){
   gs.print(incidentGR.number);
 }
 
+//removed while loop
+var incidentGR = new GlideRecord('incident');
+incidentGR.query();
+gs.print(incidentGR.number);
+//there is no output
+
+
 //Without the loop mechanism [while(incidentGR.next()){}]it will go to the first incident
-//example : script
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 incidentGR.next();
 gs.print(incidentGR.number);
 
-// Recheck it didnt work in serviceNow script
+//addQuery
 var incidentGR = new GlideRecord('incident');
 incidentGR.addQuery('priority', 1);
 incidentGR.query();
 while(incidentGR.next()) {
-  gs.print('priority 1 incident:' + incidentGR.number':'+ incidentGR.priority);
+  gs.print('priority 1 incident: ' + incidentGR.number + ' : ' + incidentGR.priority);
 }
 
+//getDisplayValue()
+var incidentGR = new GlideRecord('incident');
+incidentGR.addQuery('priority', 1);
+incidentGR.query();
+while(incidentGR.next()) {
+  gs.print('priority 1 incident: ' + incidentGR.number + ' : ' + incidentGR.priority.getDisplayValue());
+}
+
+//get() Method
 //Prints the incident number
+//go to the incident form view and copy the sys_ID
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('3894e44687b00110c5e4986d3fbb358a');
 gs.print(incidentGR.number);
+//Output will be the incident Number
 
 //Prints the incident number & sys_id
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('3894e44687b00110c5e4986d3fbb358a');
 gs.print(incidentGR.number + ' has a sys_id of' + incidentGR.sys_id);
+//Ooutput will be incident number & sys_id
+
 
 //addEncodedQuery()
 var queryString ='category=inquiry^ORcategory=software^ORcategory=hardware^active=true'
@@ -56,11 +76,14 @@ while(incidentGR.next()) {
   gs.print(incidentGR.number);
 }
 
+//newRecord
 //create new incident
 var newIncident = new GlideRecord('incident');
 newIncident.newRecord();
 newIncident.short_description = 'This incident was created from a background script';
 newIncident.insert();
+//insert() method will help insert this record into the database
+//without insert() the short description would never get saved
 
 
 //creating Multiple incidents
@@ -74,7 +97,11 @@ while(counter<=5){
   newIncidents.push(incidentGR.insert());
 }
 gs.print(newIncidents);
+//output will be in sys_id
+//check incident table for output of 5 incidents created
 
+
+//deleteRecord()
 //Deleting a Record
 var incidentGR = new GlideRecord('incident');
 incidentGR.addQuery('short_description', 'incident #5');
@@ -83,23 +110,22 @@ while(incidentGR.next()){
   incidentGR.deleteRecord();
 }
 
-gs.print(incidentGR.number + ' has ' + incidentGR.short_description);
-
-
+//orderBy
 //Ascending Order
 var incidentGR = new GlideRecord('incident');
 incidentGR.orderby('short_description');
 incidentGR.query();
 while(incidentGR.next()) {
-  gs.print(incidentGR.number +' : '+ incidentGR.short_description);
+  gs.print(incidentGR.number + ' : ' + incidentGR.short_description);
 }
 
+//orderByDesc()
 //Descending Order
 var incidentGR = new GlideRecord('incident');
 incidentGR.orderByDesc('short_description');
 incidentGR.query();
 while(incidentGR.next()) {
-  gs.print(incidentGR.number +' : '+ incidentGR.short_description);
+  gs.print(incidentGR.number + ' : ' + incidentGR.short_description);
 }
 
 //SetLimit()
@@ -110,6 +136,7 @@ problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.number);
 }
+//It will show only 5 records
 
 var problemGR = new GlideRecord('problem');
 problemGR.orderBy('short_description');
@@ -118,11 +145,13 @@ problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.short_description);
 }
+//It will show first 5 records in alphabetic order
 
-//getRowCount Method - shows no of incidents
+//getRowCount Method 
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.getRowCount());
+//shows the count of no of incidents in the tabel
 
 //hasNext() returns boolean value
 var incidentGR = new GlideRecord('incident');
@@ -133,11 +162,13 @@ gs.print(incidentGR.hasNext());
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('number', 'INC0010085');
 gs.print(incidentGR.number);
+//output will be INC0010085
 
 //getLink method
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('number', 'INC0010085');
 gs.print(incidentGR.getLink());
+// Will retreive the link of the incident number
 
 //deleteMultiple()
 var incidentGR = new GlideRecord('incident');
@@ -158,6 +189,7 @@ var incidentGR = new GlideRecord('incident');
 incidentGR.Get('number', 'INC0010083')
 incidentGR.urgency = 2;
 incidentGR.update();
+//updates one record here urgency will 2
 
 //for Multiple Records
 var incidentGR = new GlideRecord('incident');
@@ -168,6 +200,7 @@ while(incidentGR.next()){
   incidentGR.urgency =3;
   incident.update();
 }
+//ouput will be all incidents with urgency 2 will change to urgency 3
 
 //addNullQuery() This finds incidents which do not have short_description
 var incidentGR = new GlideRecord('incident');
