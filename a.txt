@@ -36,3 +36,29 @@ getLatestIncidents: function(num){
 
 var incidents = new IncidentUtils().getLatestIncidents(10);
 gs.print(incidents);
+
+
+1)Query()
+
+var gr=new GlideRecord('incident');
+gr.query();
+while(gr.next()){
+gs.addInfoMessage(gr.number);
+}
+
+If you check above example, I have used only query() so it will give you all records of table.
+
+2)addQuery()
+
+
+var gr=new GlideRecord('incident');
+gr.addQuery('state','closed');
+gr.query();
+while(gr.next()){
+gs.addInfoMessage(gr.number);
+}
+
+If you check above example, it will give those incident records who is having closed state only.
+
+So that means you can add more appropriate filters to fetch data using addQuery().
+

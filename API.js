@@ -1,3 +1,21 @@
+//Common GlideRecord Methods
+// query() - is used to query all data (one asking for information)
+// newRecord() - creates a new record
+// insert() - 
+// update() - It will update the existing record
+// deleteRecord() - deletes a record
+// addQuery() - is used to query some selected data
+// addEncodedQuery() - accepts a encoded string
+// hasNext() - returns a boolean value (should be used when you need to check if there are any records after you execute a query. It will stop after it finds a record and returns true/false)
+// next() - performs iteration
+// get() - shortcut for grabbing a specific record
+// orderBy() - Ascending Method
+// orderByDesc() - Descending Method
+// canCreate() - 
+// canWrite() - 
+// canRead() - 
+// canDelete() - 
+
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 while(incidentGR.next()){
@@ -441,4 +459,5 @@ gs.print(xmlDoc.getFirstNode('/xml/incident'));
 
 
 ////Creating Our Own API////
+
 
