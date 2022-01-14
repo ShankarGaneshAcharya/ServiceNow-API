@@ -21,6 +21,20 @@ When you execute something asynchronously, you can move on to another task befor
 Asynchronous means that you can execute multiple things at a time
 
 
+Parameter "sysparm_name" is used to find the function of script include we want to execute.
+When we have to give other Parameter then we should remember that it would be start with syspara.for e.g. sysparam_sendValue
+
+Code in asynchronous GlideAjax is executed through getXML() function.
+
+addparam() method is used with the parameters to execute the script include method and is used to provide values.
+
+
+
+
+
+
+
+
 getLatestIncidents: function(num){
 		var limit = num || 5;
 		var results = [];
@@ -41,7 +55,7 @@ gs.print(incidents);
 1)Query()
 
 var gr=new GlideRecord('incident');
-gr.query();
+gr.query();Parameter "sysparm_name" is used  find the
 while(gr.next()){
 gs.addInfoMessage(gr.number);
 }
@@ -62,3 +76,6 @@ If you check above example, it will give those incident records who is having cl
 
 So that means you can add more appropriate filters to fetch data using addQuery().
 
+hj k knkjnjk
+njnkh
+hbbb

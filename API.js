@@ -24,8 +24,7 @@ while(incidentGR.next()){
   gs.print(incidentGR.number);
 }
 
-/* removed while loop
-there is no output*/
+/* removed while loop there is no output*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.number);
@@ -149,7 +148,6 @@ shows the count of no of incidents in the tabel */
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.getRowCount());
-
 
 //hasNext() returns boolean value
 var incidentGR = new GlideRecord('incident');
@@ -360,62 +358,113 @@ gs.print(json.root.test);*/
 checkout the video on this @ 18:30
 gs.printeventQueue()*/
 
-//GlideForm Methods - Client Side
+
+
+/* GlideForm Methods - Client Side
+The GlideForm API provides methods to customize forms. The global object g_form is used to access GlideForm methods. GlideForm Methods are only used on the client. These methods are used to make custom changes to the form view of records.
+Used for
+Changes to form & fields
+Referenced by g_form 
+GlideForm Methods
+addErrorMessage()
+addInfoMessage()
+addOption()
+clearValue()
+disableAttachments()
+enableAttachments()
+getLableOf()
+getOption()
+getReference()
+hideRelatedLists()
+isMandatory()
+removeOption()
+setDisabled()
+setReadOnly()
+setVisible()
+setValue()*/
+
 //inspect javascript and first hand look on API
 console.dir(g_form)
 
-//getValue() - Pulls current value of category on the form and assign that to the variable fieldValue
+/* getValue() Method
+Pulls current value of category on the form and assign that to the variable fieldValue
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+Output - Pop ups message field value*/ 
 var fieldValue = g_form.getValue('category');
 alert(fieldValue);
 
-//setValue() Example : to set the category field value to software
+/* setValue() Method 
+Output - sets the category field value to software 
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.setValue('category', 'software');
 
-//clearValue - If you want to clear the value of any field
-//Example to clear category field value
+/* clearValue - If you want to clear the value of any field
+Example to clear category field value
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+output will be Category = none */
 g_form.clearValue('category');
-//output will be Category = none
 
-//save() - Saves the current Record
+
+/* save() Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+output will be Category = none */
 g_form.save();
 
-//setDisabled - disables the fieldValue
-//if it is true it will diable the field
+/* setDisabled - disables the fieldValue
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+if it is true it will diable the field */
 g_form.setDisabled('category', true);
 
-//if it is false it will enable the field
+/* if it is false it will enable the field 
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.setDisabled('category', false);
 
-//hideRelatedLists() & showRelatedLists()
-//hideRelatedLists - hides the related list at the bottom of the form serviceNow
+/*hideRelatedLists
+hides the related list at the bottom of the form serviceNow 
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.hideRelatedLists();
-//showRelatedLists - unhides the related list at the bottom of the form serviceNow
+
+/* showRelatedLists
+unhides the related list at the bottom of the form serviceNow
+Paste it in Javascript Executor(alt+ctrl+shift+j) */
 g_form.showRelatedLists();
 
-//isMandatory()
-//The below method will return true or false
+/* isMandatory()
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+The below method will return true or false */
 alert(g_form.isMandatory('Category'));
-//to set field as Mandatory
+/* to set field as Mandatory 
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.setMandatory('category', true);
 alert(g_form.isMandatory('Category'));
 
-//isNewRecord() - This return a boolean value whether if the current record the form is new or not
+/* isNewRecord() Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+This return a boolean value whether if the current record the form is new or not 
+output will be false*/
 var isNewRecord = g_form.isNewRecord();
 alert('Is this a new record? ' + isNewRecord);
-//output will be false
 
-//addInfoMessage() & addErrorMessage() & clearMessages()
-//addInfoMessage()
+/*addInfoMessage() Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.addInfoMessage('Hello Welcome to the javascript world');
-//addInfoMessage
+
+/*addInfoMessage Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.addInfoMessage('This is an error');
-//clearMessages()
+
+/*clearMessages() Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)*/
 g_form.clearMessages();
 
-//getlabelOf() - This method take the name of the field and reurns us the field lable
+/* getlabelOf() Method
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+This method take the name of the field and reurns us the field lable */
 alert(g_form.getLabelOf('category'));
 
-//getTableName() - This returns the table name
+/*getTableName()
+Paste it in Javascript Executor(alt+ctrl+shift+j)
+This returns the table name */
 var tableName = g_form.getTableName();
 alert('Table: ' + tableName);
 
@@ -510,7 +559,6 @@ gs.print('New Value: ' + gdt);
 //New Value represents 3 Years in future
 
 //before() - we get boolean value
-
 
 
 
@@ -629,3 +677,6 @@ gs.print(xmlDoc.getFirstNode('/xml/incident'));
 ////Creating Our Own API////
 
 
+
+1800 202 6161
+1860 267 6161
