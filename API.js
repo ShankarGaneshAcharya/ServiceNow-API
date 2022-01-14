@@ -561,8 +561,6 @@ gs.print('New Value: ' + gdt);
 //before() - we get boolean value
 
 
-
-
 //GlideElement - Server Side
 // The Scoped GlideElement API provides a number of convenient script methods for dealing with fields and their values. Scoped GlideElement methods are available for the fields of the current GlideRecord.
 //GlideRecord and GlideElement go hand in hand
