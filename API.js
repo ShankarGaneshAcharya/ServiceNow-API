@@ -1,20 +1,21 @@
-//Common GlideRecord Methods
-// query() - is used to query all data (one asking for information)
-// newRecord() - creates a new record
-// insert() - 
-// update() - It will update the existing record
-// deleteRecord() - deletes a record
-// addQuery() - is used to query some selected data
-// addEncodedQuery() - accepts a encoded string
-// hasNext() - returns a boolean value (should be used when you need to check if there are any records after you execute a query. It will stop after it finds a record and returns true/false)
-// next() - performs iteration
-// get() - shortcut for grabbing a specific record
-// orderBy() - Ascending Method
-// orderByDesc() - Descending Method
-// canCreate() - 
-// canWrite() - 
-// canRead() - 
-// canDelete() - 
+/* Common GlideRecord Methods
+query() - is used to query all data (one asking for information)
+newRecord() - creates a new record
+insert() - 
+update() - It will update the existing record
+deleteRecord() - deletes a record
+addQuery() - is used to query some selected data
+addEncodedQuery() - accepts a encoded string
+hasNext() - returns a boolean value (should be used when you need to check if there are any records after you execute a query. It will stop after it finds a record and returns true/false)
+next() - performs iteration
+get() - shortcut for grabbing a specific record
+orderBy() - Ascending Method
+orderByDesc() - Descending Method
+canCreate() - 
+canWrite() - 
+canRead() - 
+canDelete() - 
+ */
 
 //This will print all of the incident Numbers
 var incidentGR = new GlideRecord('incident');
@@ -23,11 +24,12 @@ while(incidentGR.next()){
   gs.print(incidentGR.number);
 }
 
-//removed while loop
+/* removed while loop
+there is no output*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.number);
-//there is no output
+
 
 
 //Without the loop mechanism [while(incidentGR.next()){}]it will go to the first incident
@@ -52,20 +54,20 @@ while(incidentGR.next()) {
   gs.print('priority 1 incident: ' + incidentGR.number + ' : ' + incidentGR.priority.getDisplayValue());
 }
 
-//get() Method
-//Prints the incident number
-//go to the incident form view and copy the sys_ID
+/* get() Method
+Prints the incident number
+go to the incident form view and copy the sys_ID
+Output will be the incident Number */
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('3894e44687b00110c5e4986d3fbb358a');
 gs.print(incidentGR.number);
-//Output will be the incident Number
 
-//Prints the incident number & sys_id
+
+/* Prints the incident number & sys_id
+Output will be incident number & sys_id*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('3894e44687b00110c5e4986d3fbb358a');
 gs.print(incidentGR.number + ' has a sys_id of' + incidentGR.sys_id);
-//Ooutput will be incident number & sys_id
-
 
 //addEncodedQuery()
 var queryString ='category=inquiry^ORcategory=software^ORcategory=hardware^active=true'
@@ -76,17 +78,19 @@ while(incidentGR.next()) {
   gs.print(incidentGR.number);
 }
 
-//newRecord
-//create new incident
+/* newRecord
+create new incident
+insert() method will help insert this record into the database
+without insert() the short description would never get saved */
 var newIncident = new GlideRecord('incident');
 newIncident.newRecord();
 newIncident.short_description = 'This incident was created from a background script';
 newIncident.insert();
-//insert() method will help insert this record into the database
-//without insert() the short description would never get saved
 
 
-//creating Multiple incidents
+/* creating Multiple incidents
+output will be in sys_id
+check incident table for output of 5 incidents created */
 var newIncidents =[];
 var counter = 1;
 var incidentGR = new GlideRecord('incident');
@@ -97,12 +101,10 @@ while(counter<=5){
   newIncidents.push(incidentGR.insert());
 }
 gs.print(newIncidents);
-//output will be in sys_id
-//check incident table for output of 5 incidents created
 
 
-//deleteRecord()
-//Deleting a Record
+/* deleteRecord()
+Deleting a Record*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.addQuery('short_description', 'incident #5');
 incidentGR.query();
@@ -110,8 +112,8 @@ while(incidentGR.next()){
   incidentGR.deleteRecord();
 }
 
-//orderBy
-//Ascending Order
+/* orderBy
+Ascending Order*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.orderby('short_description');
 incidentGR.query();
@@ -119,8 +121,8 @@ while(incidentGR.next()) {
   gs.print(incidentGR.number + ' : ' + incidentGR.short_description);
 }
 
-//orderByDesc()
-//Descending Order
+/* orderByDesc()
+Descending Order*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.orderByDesc('short_description');
 incidentGR.query();
@@ -128,16 +130,16 @@ while(incidentGR.next()) {
   gs.print(incidentGR.number + ' : ' + incidentGR.short_description);
 }
 
-//SetLimit()
-//Will set limit for queryString
+/* SetLimit()
+Will set limit for queryString
+It will show only 5 records */
 var problemGR = new GlideRecord('problem');
 problemGR.setlimit(5);
 problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.number);
 }
-//It will show only 5 records
-
+//It will show first 5 records in alphabetic order
 var problemGR = new GlideRecord('problem');
 problemGR.orderBy('short_description');
 problemGR.setlimit(5);
@@ -145,32 +147,34 @@ problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.short_description);
 }
-//It will show first 5 records in alphabetic order
 
-//getRowCount Method 
+
+/* getRowCount Method 
+shows the count of no of incidents in the tabel */
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.getRowCount());
-//shows the count of no of incidents in the tabel
+
 
 //hasNext() returns boolean value
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.hasNext());
 
-//get Method
+/* get Method
+output will be INC0010085 */
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('number', 'INC0010085');
 gs.print(incidentGR.number);
-//output will be INC0010085
 
-//getLink method
+/* getLink method
+Will retreive the link of the incident number */
 var incidentGR = new GlideRecord('incident');
 incidentGR.get('number', 'INC0010085');
 gs.print(incidentGR.getLink());
-// Will retreive the link of the incident number
 
-//deleteMultiple()
+/* deleteMultiple()
+While loop is used to check the record exists or not*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.addEncodedQuery('short_descriptionLIKEincident #');
 incidentGR.query();
@@ -183,15 +187,16 @@ var incidentGR = new GlideRecord('incident');
 incidentGR.addEncodedQuery('short_descriptionLIKEincident #');
 incidentGR.deleteMultiple
 
-//update()
-//For single Record
+/*update()
+For single Record
+updates one record here urgency will 2*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.Get('number', 'INC0010083')
 incidentGR.urgency = 2;
 incidentGR.update();
-//updates one record here urgency will 2
 
-//for Multiple Records
+/* for Multiple Records
+ouput will be all incidents with urgency 2 will change to urgency 3*/
 var incidentGR = new GlideRecord('incident');
 incidentGR.addQuery('urgency', 2);
 incident.query();
@@ -200,7 +205,6 @@ while(incidentGR.next()){
   incidentGR.urgency =3;
   incident.update();
 }
-//ouput will be all incidents with urgency 2 will change to urgency 3
 
 //addNullQuery() This finds incidents which do not have short_description
 var incidentGR = new GlideRecord('incident');
@@ -222,8 +226,144 @@ var helloText = 'Hello World'
 gs.print(helloText);
 
 
+/* GlideSystem Intro - Server side
+The GlideSystem API provides a number of convenient methods to get information about the system, the current logged in user, etc.
 
+Used for
+system and user Data
+Referenced by gs
+Doesnt need to be invoked
+helper Methods
+ 
+addErrorMessage() - shown on the client side
+addInfoMessage() - shown on the client side
+eventQueue()
+getMessage()
+getProperty()
+getSession()-  it keeps of tracks of session inside of the system
+print() - similar like console.log
+error()
+log()
+debug()
+info()
+warn()
+generateGUID() - sys_id
+getUser() - will return current user object to us 
+hasRole() - to find out the role of the user
+isLoggedIn() - helpful in service portal scripts
+isMobile() - helpful in service portal scripts
+nil()
+setRedirect()
+setProperty()
+*/
 
+/*GlideSystem Methods
+gs.print() Method */
+gs.print('Hello World!');
+
+/*gs.log() Method
+accepts two arguments one is message and second is source
+the below log message can be viewed under logs in script log statements module*/
+gs.log('This is a log message', 'marks_logs');
+//can be passed as below
+gs.log('This is a log message');
+
+/*gs.error() Method
+the below error message can be viewed under System log in error module*/
+gs.error('I am an error Message');
+
+/*gs.warn() Method
+the below warn message can be viewed under System log in warnings module*/
+gs.warn('I am warn message');
+
+/*gs.addErrorMessage() Method
+Runs on update in incident form in business rule
+accepts the string arguments*/
+gs.addErrorMessage('STOP!! This is an error message');
+
+/*gs.addInfomMessage() Method
+Runs on update in incident form in business rule
+accepts the string arguments*/
+gs.addInfoMessage('Welcom to ServiceNow');
+
+/*gs.beginningOfLastMonth() Method
+returns the Begining of date of last Month
+output will be 2021-12-01 08:00:00*/
+gs.print(gs.beginningOfLastMonth());
+
+/* generateGUID() Method
+generates the sys_id */
+gs.print(generateGUID());
+
+/* gs.getMessage() Method
+Helps in language */ 
+gs.getMessage();
+
+/*watch tutorial serviceNow Developer Course 10:20
+gs.getProperty() Method
+gs.property Method*/
+
+/* getUser() Method
+will return current user object to us
+output will be Script: com.glide.sys.User@fccb86*/
+gs.print(gs.getUser());
+/* If you want dislay name of the current user
+output will be Script: System Administrator*/
+gs.print(gs.getUser().getDisplayName());
+/* We can also use getFirstName Method which will return the first Name
+output will be Script: System */
+gs.print(gs.getUser().getFirstName());
+/* We can also use getLocation Method
+output will be sys_id*/
+gs.print(gs.getUser().getLocation());
+/* getUserRoles Method
+Output will be Script: admin,security_admin*/
+gs.print(gs.getUser().getUserRoles());
+/* getUserID Method
+It grabs sys_id of my user record
+Output will be Script: f4c3ec6c87204110c5e4986d3fbb3536*/
+gs.print(gs.getUserID());
+
+/* hasRole() Method 
+To find out the role of the user
+Output it will print the message */
+if(gs.hasRole('itil') || (gs.hasRole('admin')){
+  gs.print('The current user has ITIL or admin');
+}
+
+/* getSeesion() Method
+which will retrun the session ID
+outout will be Script: com.glide.sys.GlideSnapshotSession@606374*/
+gs.print(gs.getSession());
+/* We can also change the is logged in method on the session method, which will return a boolean value. if the user is logged in or not.
+Output will be Script: true*/
+gs.print(gs.getSession().isLoggedIn());
+
+/* nil() Method
+The nil method will test whether a specific variable contains a falsey value. variable can be string or object
+Output : It will display incident without short short_description*/
+var incidentGR = new GlideRecord('incident');
+incidentGR.query();
+while(incidentGR.next()) {
+  if(gs.nil(incidentGR.short_description)){
+    gs.print('This incident (' + incidentGR.number + ' ) has no short Description ' + incidentGR.short_description);
+  }
+}
+
+/* tableExists() Method
+This will test if the argument is actually a table within the system.
+Output will be Script: true*/
+gs.print(gs.tableExists('incident'));
+
+/* xmlToJSON() Method
+checkout the video on this @ 17:00 
+var xmlString = 'new to method';
+var json = gs.xmlToJSON(xmlString);
+gs.print(json.root.test);*/
+
+/*eventQueue() Method
+checkout the video on this @ 18:30
+gs.printeventQueue()*/
 
 //GlideForm Methods - Client Side
 //inspect javascript and first hand look on API
