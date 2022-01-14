@@ -30,8 +30,6 @@ var incidentGR = new GlideRecord('incident');
 incidentGR.query();
 gs.print(incidentGR.number);
 
-
-
 //Without the loop mechanism [while(incidentGR.next()){}]it will go to the first incident
 var incidentGR = new GlideRecord('incident');
 incidentGR.query();
@@ -62,7 +60,6 @@ var incidentGR = new GlideRecord('incident');
 incidentGR.get('3894e44687b00110c5e4986d3fbb358a');
 gs.print(incidentGR.number);
 
-
 /* Prints the incident number & sys_id
 Output will be incident number & sys_id*/
 var incidentGR = new GlideRecord('incident');
@@ -87,7 +84,6 @@ newIncident.newRecord();
 newIncident.short_description = 'This incident was created from a background script';
 newIncident.insert();
 
-
 /* creating Multiple incidents
 output will be in sys_id
 check incident table for output of 5 incidents created */
@@ -101,7 +97,6 @@ while(counter<=5){
   newIncidents.push(incidentGR.insert());
 }
 gs.print(newIncidents);
-
 
 /* deleteRecord()
 Deleting a Record*/
@@ -139,7 +134,8 @@ problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.number);
 }
-//It will show first 5 records in alphabetic order
+/* SetLimit()
+It will show first 5 records in alphabetic order*/
 var problemGR = new GlideRecord('problem');
 problemGR.orderBy('short_description');
 problemGR.setlimit(5);
@@ -147,7 +143,6 @@ problemGR.query();
 while(problemGR.next()){
   gs.print(problemGR.short_description);
 }
-
 
 /* getRowCount Method 
 shows the count of no of incidents in the tabel */
