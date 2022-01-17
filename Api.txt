@@ -217,7 +217,6 @@ https://www.youtube.com/watch?v=Rtpu2cWz7W8
 Video on readme
 Pinned by CodeWithHarry
 
-
 https://www.youtube.com/watch?v=ZmGW45eZOg8
 gitignore in Visual Studio Code
 Video on gitignore
