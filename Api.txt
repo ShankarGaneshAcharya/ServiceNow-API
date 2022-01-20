@@ -221,3 +221,7 @@ https://www.youtube.com/watch?v=ZmGW45eZOg8
 gitignore in Visual Studio Code
 Video on gitignore
 By Alejandro Magnitopic
+
+https://www.youtube.com/watch?v=dW2wL12f7qw
+Creating New Incident by Virtual Agent in ServiceNow
+Fidel Technologies

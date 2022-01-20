@@ -84,9 +84,12 @@ Check
 1.	Activity Log 
 STRY00010024
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=79fd19ae4f4f0200ac61433e0210c745%26sysparm_view=scrum
+The ticket is too old, as earlier users did not had access to Activity log hence the ticket was raise.
+
  
 2.	Resolution notification and survey
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=c2734bca4f4b0200ac61433e0210c7df%26sysparm_view=scrum
+
  
 3.	Chat
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=b54a9dea4f4f0200ac61433e0210c773%26sysparm_view=scrum
