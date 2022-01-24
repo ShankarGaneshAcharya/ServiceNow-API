@@ -86,11 +86,11 @@ Check
 STRY00010024
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=79fd19ae4f4f0200ac61433e0210c745%26sysparm_view=scrum
 Status : Completed on 15.01.2022
-The ticket is too old, as earlier users did not had access to Activity log hence the ticket was raise.
  
 2. User Type
 STRY00010072
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=c2734bca4f4b0200ac61433e0210c7df%26sysparm_view=scrum
+Status : Analysis in progress
  
 3.	Chat
 STRY00010016
@@ -98,7 +98,7 @@ https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=b54a9dea4f4f02
 Status : Analysis in progress
 
 
-
+Analysis in progress
 Implementation / Development in progress
 Testing in progress
 Completed.
@@ -119,3 +119,5 @@ https://www.youtube.com/watch?v=dW2wL12f7qw
 Chat
 https://www.youtube.com/watch?v=iYl9ZNVZUFk
 https://www.youtube.com/watch?v=dW2wL12f7qw
+https://www.youtube.com/watch?v=jc7FyaFz6Cw
+https://www.youtube.com/watch?v=X-r4YXtUFwU
