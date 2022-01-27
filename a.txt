@@ -98,17 +98,48 @@ https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=b54a9dea4f4f02
 Status : Analysis in progress
 
 
-Analysis in progress
+
 Implementation / Development in progress
 Testing in progress
 Completed.
 
 
-4. Alternate Contact
+4. Alternate Contact - X
 STRY00010038
 https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=6d2075324f434200ac61433e0210c77b%26sysparm_view=scrum
 
+5. Primary Affiliation field - X
+STRY00010040
+https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=12f0b5324f434200ac61433e0210c7f0%26sysparm_view=scrum
 
+6. User Record: Expose "Assets" tab related list - X
+STRY00041059
+https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=5f75571adbcc2810abd392b6db9619d5%26sysparm_view=scrum
+
+7. Notification for when  a catalog task  Customer Note  is updated - X
+STRY00041655
+https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=608266bfdb58a894b9dc9447db9619e4%26sysparm_view=scrum
+
+8.Create Incident Management Group-X
+STRY00010609
+https://stanford.service-now.com/nav_to.do?uri=%2Frm_story.do%3Fsys_id%3Db4222a2d13471200675e7c004244b0d2%26sysparm_view%3Dscrum
+
+9. Incident Form changes
+Incident Form changes
+https://stanford.service-now.com/nav_to.do?uri=%2Frm_story.do%3Fsys_id%3D3c1e844f13d69600f1363cc12244b0e2%26sysparm_view%3Dscrum
+
+
+10. Incident Priority
+STRY00010037
+https://stanford.service-now.com/nav_to.do?uri=%2Frm_story.do%3Fsys_id%3D6be805ba4f034200ac61433e0210c7bb%26sysparm_view%3Dscrum
+
+11. Make Description mandatory on Group form
+STRY00011488
+https://stanford.service-now.com/nav_to.do?uri=%2Frm_story.do%3Fsys_id%3D143eabdc13ef6200d08ebda12244b0a2%26sysparm_view%3Dscrum
+
+12. Chat creates incident, contact type should be updated to "Chat"
+STRY00011187
+https://stanford.service-now.com/nav_to.do?uri=%2Frm_story.do%3Fsys_id%3D280f16e44f062e8074c9a35e0210c7b2%26sysparm_view%3Dscrum
 
 type 3
 https://www.youtube.com/watch?v=iYl9ZNVZUFk
@@ -121,3 +152,6 @@ https://www.youtube.com/watch?v=iYl9ZNVZUFk
 https://www.youtube.com/watch?v=dW2wL12f7qw
 https://www.youtube.com/watch?v=jc7FyaFz6Cw
 https://www.youtube.com/watch?v=X-r4YXtUFwU
+
+
+1500
