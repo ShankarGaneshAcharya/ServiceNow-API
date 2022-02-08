@@ -98,7 +98,7 @@ https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=b54a9dea4f4f02
 Status : Analysis in progress
 
 
-
+Analysis in progress
 Implementation / Development in progress
 Testing in progress
 Completed.
@@ -152,6 +152,72 @@ https://www.youtube.com/watch?v=iYl9ZNVZUFk
 https://www.youtube.com/watch?v=dW2wL12f7qw
 https://www.youtube.com/watch?v=jc7FyaFz6Cw
 https://www.youtube.com/watch?v=X-r4YXtUFwU
+https://www.youtube.com/watch?v=vmZjqdFI1cw
 
 
 1500
+
+Virtual Agent
+
+Virtual Agent setup in ServiceNow Part 1
+https://www.youtube.com/watch?v=4gER846HJ10
+Virtual Agent setup in ServiceNow Part 2
+https://www.youtube.com/watch?v=YZvCJahzZ7k
+
+https://www.youtube.com/watch?v=dW2wL12f7qw
+
+
+https://www.youtube.com/watch?v=dW2wL12f7qw
+https://www.youtube.com/watch?v=0FAq5_ofPII
+
+
+Chat Bot Automated
+~~~~~~~~~~~~~~~~~~
+Widget Installation
+https://www.youtube.com/watch?v=4gER846HJ10
+FLow Design
+https://www.youtube.com/watch?v=dW2wL12f7qw
+codings
+https://www.youtube.com/watch?v=0FAq5_ofPII
+
+	var gr = new GlideRecord('incident')
+	gr.addQuery('number', varInput.)
+    gr.query();
+	if(gr.next()){
+	  gr.work_notes=vaInputs.wnotes;
+    gr.update();	
+	}
+
+Workspace Agent Chat Setup Steps
+SnowExpert Rohit
+https://www.youtube.com/watch?v=jc7FyaFz6Cw
+
+Creating New Incident by Virtual Agent in ServiceNow
+Fidel Technologies
+https://www.youtube.com/watch?v=dW2wL12f7qw
+
+Virtual Agent Topic and Code | E2
+SnowExpert Rohit
+https://www.youtube.com/watch?v=0FAq5_ofPII
+
+Virtual Agent Designer - Topic Creation - ServiceNow
+Hardit Singh
+https://www.youtube.com/watch?v=MmjqUV6Ls-4
+
+Virtual Agent setup in ServiceNow Part 1
+Göran Lundqvist
+https://www.youtube.com/watch?v=4gER846HJ10
+
+Virtual Agent setup in ServiceNow Part 2 (second Edition)
+Göran Lundqvist
+https://www.youtube.com/watch?v=YZvCJahzZ7k
+
+How to get started with ServiceNow Virtual Agent | Rome Release
+ServiceNow - Now Community
+https://www.youtube.com/watch?v=bzN1Z_dqjqI
+
+
+
+  INC0010014
+
+  [PREVIEW ONLY] subflow link_unfurling was called. Please view execution details in Flow Designer using context ID 2b9623ac4ee105104b3852aac37d6390.

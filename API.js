@@ -612,7 +612,6 @@ while(incidentGR.next()){
 }
 //Prints all of the incident numbers whose short description is nill or null
 
-
 //XMLDocument2 API - Serverside APi so we cannot use on client Side
 
 //XMLDocument2 is a JavaScript Object Wrapper for parsing and extracting XML data from an XML string
@@ -648,7 +647,6 @@ xmlDoc.parseXML(xmlString);
 gs.print(xmlDoc.getFirstNode('/xml/incident'));
 
 
-
 ///Other APIs and Undocumented APIs////
 //Documented APIs
 //GlideModal - used for Pop ups in SericeNow
@@ -671,14 +669,10 @@ gs.print(xmlDoc.getFirstNode('/xml/incident'));
 // Cart
 // SPCart
 
-
 ////Creating Our Own API////
-
-
 
 1800 202 6161
 1860 267 6161
-
 
 https://stanforddev2.service-now.com
 https://stanford.service-now.com
@@ -687,12 +681,12 @@ https://stanforddev.service-now.com
 
 https://stanford.zoom.us/
 
-/* 
+/*
 SR01036527
 SR01036528
  */
 
-/* 
+/*
 ITIL User
 UIT DMR STU
 UIT DMR
@@ -707,4 +701,78 @@ UIT Hosting Services
 Bruno Velazquez
 
 UIT Problem Management
+
+
+
+
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+  if (isLoading || newValue === '') {
+     return;
+  }
+
+  //Type appropriate comment here, and begin script below
+   var ga = new GlideAjax('UserDateIncludes');
+ ga.addparam('sysparm_name','getNewDate');
+ ga.addparam('sysparm_date', g_form.getValue('u_date'));
+ ga.getXMLAnswer(ajaxProcessor);
  
+ function ajaxProcessor(response){
+   var datefield = g_form.getControl('u_date');
+     if (response==0){
+       datefield.style.backgroundColour='red';
+       datefield.style.colour='white';
+     }
+     else if (response==1){
+       datefield.style.backgroundColour='green';
+       datefield.style.colour='white';
+     }
+ }
+}
+
+
+var UserDateIncludes = Class.create();
+UserDateIncludes.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+	
+	getNewDate: function(){
+		var tydate = new GlideDateTime();
+		var ttdate = this.getParameter('sysparm_date');
+		var fieldDate = new GlideDateTime(ttdate);
+		if (tydate.after(fieldDate)){
+			return 0;
+		}
+		else if (tydate.before(fieldDate)){
+			return 1;
+		}
+		
+},
+
+    type: 'UserDateIncludes'
+});
+
+
+
+3.1 List View of Open Problems
+STRY00010276
+Request : As a Problem Coordinator, I want to review open Problem records with no proposed fix so that the problem can be reviewed for priority
+Within the Problem application, clicking on the "Open" module on the lefthand nav bar should produce the following list/display: Problem number Short description State Assignment Group Assigned To Affected CI Related Incidents
+Status : 
+Solution : 
+
+2.9 Root Cause Analysis of Problems
+STRY00010275
+Request : As Problem Process Manager, I want to ensure that the root causes of problems is documented, so as to report and categorize them properly.
+Ability to update Problem record with root cause details. A new "Root Cause Analysis" section will be added to the Problem form (filling out the fields on this tab will be mandatory upon updating the Problem record state to "Resolved"). The following fields will be on the RCA section: Reporter - "Submitted by" from the Incident Record Impact - pull from Incident record Discovered By - select from Monitoring, End User, IT Staff Close notes - open text field Root Cause Category (pick list to be provided by Matthew; already coded) Corrective Action Summary - open text field Below the RCA section will be the following: Outage information (start/end time) - from Outage Record Listing of related Incident numbers In the Problem Task form, categories are Investigation, Corrective Action, SDLC
+Status : 
+Solution : 
+
+Auto Number
+STRY00010032	
+Request : As the Incident Process Owner I need service now to automatically assign a unique number starting with INC and containing eight digits with the first number being INC00000001 so we have enough numbers for the expected volume.
+newly created tickets have a unique number generated of the format INCnnnnnnnn (where n is a number from 0 to 9). For example: INC00000001, INC00000002, etc. [Vacilis]
+Status : 
+Solution : 
+
+Task : 
+https://docs.servicenow.com/bundle/rome-now-intelligence/page/administer/virtual-agent/concept/va-lite.html
+Status : 
+Solution : 
