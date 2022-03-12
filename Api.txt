@@ -222,3 +222,36 @@ gitignore in Visual Studio Code
 Video on gitignore
 By Alejandro Magnitopic
 
+
+
+STRY00048801
+Create new Public user role for hospital asset assignments
+As the UIT Billing Manager, I would like to assign assets to users in the adult and children's hospitals so that we can accurately track usage across our services.
+
+To do this, we need to create a NEW public user that will be used to assign to users affiliated with either Stanford Healthcare (SHC) or Stanford Children's Health (SCH) who do not have profiles automatically created as part of our LDAP integrations.
+
+Create the a new user record with the following attributes outlined below:
+
+User ID: hospital_guest
+First Name: Hospital
+Last Name: Guest
+
+STRY00025037
+SNOW Backend: Add new fields for "Primary Building", "Primary Floor" and "Primary Room" information to User record
+Add new fields under "Location" tab on User record called "Primary building", "Primary Floor" and "Primary Room". (Rename existing field "Building" to "Primary Building".)
+Place below "Local phone" field and next to "University Mailcode".
+"Primary Building" field shows Quad-Building (aka Building Code) and is a reference field to the Location table: cmn_building.list
+Add "Primary Floor" below "Primary Building". This is a future field to come from StanfordYou/LDAP.
+Add "Primary Room" below "Primary Floor". This is a future field to come from StanfordYou/LDAP.
+No field level security on any of the 3 fields. At the API level, the "Visibility" selected in StanfordYou will be enforced. Only if Visibility=Public or =Stanford will the information be exposed in the API. If Visibility=Private, the information will not be exposed at the API level and the fields stay Blank.
+QA Time - 3 hrs
+
+
+
+Sc is pre defined form were we are inputing our values and requesting for item in cat item, data is saved in SC_req_Item table.
+https://www.youtube.com/watch?v=tjTp3tWYzrA
+How to Create Record Producer in ServiceNow | Service Catalog (Step by Step Implementation)
+
+Create an Incident Form Using a Template from Service Portal
+https://www.youtube.com/watch?v=FDHplo7TTYw
+Karthik Parthasarathy

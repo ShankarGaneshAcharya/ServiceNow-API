@@ -221,3 +221,254 @@ https://www.youtube.com/watch?v=bzN1Z_dqjqI
   INC0010014
 
   [PREVIEW ONLY] subflow link_unfurling was called. Please view execution details in Flow Designer using context ID 2b9623ac4ee105104b3852aac37d6390.
+
+
+
+
+https://signon.service-now.com/ssologin.do?RelayState=%252Fapp%252Fservicenow_ud%252Fexks6phcbx6R8qjln0x7%252Fsso%252Fsaml%253FRelayState%253Dhttps%25253A%25252F%25252Fdeveloper.servicenow.com%25252Fdev.do&redirectUri=&email=
+
+
+stanford Zoom Call
+https://stanford.zoom.us/
+
+Stanford Login
+https://stanford.service-now.com/
+
+https://stanford.service-now.com/
+
+How to Export an Update Set in ServiceNow
+https://www.youtube.com/watch?v=o_4GhS9-zwg
+
+
+ServiceNow - Update Set
+1. What is update set?	
+2. How to capture the update in update set?
+3. How to move the update set to another instance?
+4. How to merge the update sets?
+5. Resolve the issues while migrating the update set.
+https://www.youtube.com/watch?v=y5ES6yX7QuY
+
+
+https://www.youtube.com/watch?v=3tv6CwekdgI
+
+ 
+3.1 List View of Open Problems
+STRY00010276
+Request : As a Problem Coordinator, I want to review open Problem records with no proposed fix so that the problem can be reviewed for priority
+Within the Problem application, clicking on the "Open" module on the lefthand nav bar should produce the following list/display: Problem number Short description State Assignment Group Assigned To Affected CI Related Incidents
+Status : 
+Solution : 
+
+2.9 Root Cause Analysis of Problems
+STRY00010275
+Request : As Problem Process Manager, I want to ensure that the root causes of problems is documented, so as to report and categorize them properly.
+Ability to update Problem record with root cause details. A new "Root Cause Analysis" section will be added to the Problem form (filling out the fields on this tab will be mandatory upon updating the Problem record state to "Resolved"). The following fields will be on the RCA section: Reporter - "Submitted by" from the Incident Record Impact - pull from Incident record Discovered By - select from Monitoring, End User, IT Staff Close notes - open text field Root Cause Category (pick list to be provided by Matthew; already coded) Corrective Action Summary - open text field Below the RCA section will be the following: Outage information (start/end time) - from Outage Record Listing of related Incident numbers In the Problem Task form, categories are Investigation, Corrective Action, SDLC
+Status : 
+Solution : 
+
+Auto Number
+STRY00010032	
+Request : As the Incident Process Owner I need service now to automatically assign a unique number starting with INC and containing eight digits with the first number being INC00000001 so we have enough numbers for the expected volume.
+newly created tickets have a unique number generated of the format INCnnnnnnnn (where n is a number from 0 to 9). For example: INC00000001, INC00000002, etc. [Vacilis]
+Status : 
+Solution : 
+
+Task : 
+https://docs.servicenow.com/bundle/rome-now-intelligence/page/administer/virtual-agent/concept/va-lite.html
+Status : 
+Solution : 
+
+
+
+1800 202 6161
+1860 267 6161
+
+Yes you can achieve it very easily by creating an UI action. Just navigate to UI Actions module. You can find it under System UI. 
+
+ 
+
+Click on new
+Now give a name to your UI action. Such as Save or Save as Draft.
+Select the table on which you want to apply this UI action. Such as Incident or Problem.
+Now give an Action name (sysverb_insert)
+Now to display this UI action in your Hamburger menu or Banner Menu just select the Form Context Menu along with List Context Menu (Checkbox) to right hand side.
+Now write a code to save the current record on the form.
+ 
+
+Script:
+
+answer = current.insert();
+gs.include('ActionUtils');
+var au = new ActionUtils();
+au.postInsert(current);
+action.setRedirectURL(current);
+
+ 
+
+
+Create a custom related list in ServiceNow
+Harshad Chawra
+https://www.youtube.com/watch?v=6P3NFTc4Kb4
+
+
+STRY00010248
+
+STRY00010267
+2.1 Add attachments to a Problem record
+As a Problem Coordinator, I want the ability to attach an attachment (Word, Excel, PDF, etc.) to a Problem record.
+Abilty to add multiple attachments, as needed, including Word, Excel, PDF.
+
+STRY00011671
+Create a custom role that opens up the VIP flag for editing by user admin
+We need to make the VIP flag editable by Vacilis as user admin, Tier 2 Support.
+Allow user_admin role users ability to updateVIP flag in user record
+
+STRY00035432
+Add a related list that shows all child Support Requests of a parent.
+As a fulfiller I would like a related list that shows any child support requests of a parent support request.
+Please create a new related list on the Support Request form that lists any support requests that are children of the parent support request.
+Label the list "Child Support Requests" and place it on the right of related Incidents.
+
+
+
+
+
+
+
+
+
+
+As a Stanford Employee or Student, I would like to be able to upload my vaccination document by going to Health check record and uploading from the Menu or Manage Attachment menu
+We will be updating this form already created. https://stanforddev.service-now.com/services?id=sc_cat_item&sys_id=31e3cebf1ba7e090a61d41d5ec4bcbca
+
+Details:
+This form will belong to the IT Catalog but should have no meta tags; hence not searchable
+Assignment Group: Stanford Vaccination Management (new group)
+
+Fields on the Form:
+- Short Description: Upload My COVID Vaccination Documentation
+
+- Description: Upload your COVID vaccination documentation as an attachment using the paper clip icon at the bottom right. Once submitted, go to My Tickets from the top menu to view or make changes to your vaccination document. Please do not upload your vaccination document until you have been fully vaccinated. Individuals are considered fully vaccinated two weeks after receiving a single-dose vaccine (e.g., J&J/Janssen) or two weeks after the second dose in a two-dose series. Vaccination card uploads will only be validated if they indicate full vaccination status.
+
+
+-Vaccination manufacturer/Name (mandatory)
+
+-When did you receive your first dose? (mandatory). If the date for the 1st dose is in the future, display an Error Message: The date of the first dose cannot be a future date
+
+-When did you receive your second dose? (this field will only display if the Vaccine manufacturer is not Johnson and Johnson). If the date for the 2nd dose is before the date for the first dose.
+Error Message: The date of the second dose cannot be before the date for the first dose.
+Note: For the 2 dose vaccines, both the dates have to be added i.e. make the question When did you receive your second dose? mandatory for all except J&J and 'Other"
+
+- Make the Attachment mandatory and if an attachment is not uploaded, display an error message if user attempts to submit the form without attaching a vaccination card.
+Error Message :To complete form submission, please attach your vaccination card.
+- If the information exists on the CRX record, then populate the fields with this information
+
+- Add Attestation to form:
+------- A checkbox for attestation (Mandatory)
+Text: I certify that my answers are complete and true.
+
+
+
+shankarganesh283@gmail.com - Auto bot
+shankarganeshacharya105@outlook.com - Agent Workspace
+
+
+
+https://www.youtube.com/watch?v=-w49Bu6RpxY
+
+
+Saas with ServiceNow
+
+https://www.youtube.com/watch?v=eR02bZmtTCo
+Catalog Builder | Creating catalog item templates
+
+https://www.youtube.com/watch?v=OeNR7zSc75Y
+Catalog Builder | Creating catalog items
+
+https://www.youtube.com/watch?v=gYmg_kkfwaM&list=PLCOmiTb5WX3pwlPgS6uVWdZ-e7V1tIoDA
+Catalog Builder | Overview
+
+https://www.youtube.com/watch?v=FDHplo7TTYw
+Create an Incident Form Using a Template from Service Portal
+
+https://www.youtube.com/watch?v=aI1AEFDVDHE
+Create and Use a Response Templates
+
+https://www.youtube.com/watch?v=EPOsxq4O1dE
+ServiceNow Guide for Developers | Create Catalog Item | Automate Approval Workflow
+
+
+https://www.youtube.com/watch?v=zkWTybCed34
+Catalog Client Script Examples ServiceNow | Scripting Demo of All types of Catalog client Script
+
+
+https://www.youtube.com/watch?v=Zd7U6bJDz_E
+Service Catalog | Variables,Client Script, Ui Policy & Execution Plan | Part 3
+
+
+
+Story:
+
+https://stanford.service-now.com/nav_to.do?uri=rm_story.do?sys_id=b4dfe949873fa854d9e07778cebb35c3%26sysparm_view=scrum
+
+This is how it comes on DEV right now:
+
+https://stanforddev.service-now.com/services?id=sc_cat_item&table=sc_cat_item&sys_id=31e3cebf1ba7e090a61d41d5ec4bcbca
+
+The dev version has some more fields and features but ignore and just get the part mentioned in story above.
+
+
+Using UI Messages within (Catalog) UI Policies [Workaround]
+https://community.servicenow.com/community?id=community_article&sys_id=2c7fdf5fdb1158905129a851ca9619b6
+
+https://docs.servicenow.com/bundle/sandiego-servicenow-platform/page/product/service-catalog-management/reference/r_VariableTypes.html#d1622272e941
+
+
+
+Video
+https://www.youtube.com/watch?v=ZTUAQ3QQw8M&list=PLgMvigbxmqHT86sejF4m44WRaYFvd8WfQ
+Details on Service Catalog(From Part 1 to Part  )
+Hardit Singh
+
+
+
+
+
+Video
+How to Fetch incident List to Service Portal || ServiceNow 
+Mango Programming
+https://www.youtube.com/watch?v=M7CNaqCCSp8
+
+Video
+Catalog Client Script Examples ServiceNow | Scripting Demo of All types of Catalog client Script
+Basico ServiceNow Learning
+https://www.youtube.com/watch?v=zkWTybCed34
+
+Video
+23. ServiceNow - How to Design a Record Producer (Service Catalog) 
+https://www.youtube.com/watch?v=2KIQ68HaHcE
+
+Articles
+What is the record producer and how can we start the script in record producer? 
+https://community.servicenow.com/community?id=community_question&sys_id=758e895c1beedc50305fea89bd4bcb35	
+
+Articles
+Could we move [Submit] button in the SP site?
+https://community.servicenow.com/community?id=community_question&sys_id=42ab9ed5db7bb7c80be6a345ca9619bc
+
+Articles
+Redirect after submitting a record producer
+https://docs.servicenow.com/bundle/sandiego-servicenow-platform/page/product/service-catalog-management/concept/c_PopulatingRecordData.html?cshalt=yes
+
+Article
+Adding a Redirect and Info Message to a Record Producer
+https://servicenowguru.com/scripting/adding-redirect-message-record-producer/
+
+Article
+Catalog UI Policy - end date cannot be before start date
+https://community.servicenow.com/community?id=community_question&sys_id=501a82cadbb3e490d58ea345ca96196f
+
+Article
+Start Date cannot be in future - Client Script 
+https://community.servicenow.com/community?id=community_question&sys_id=5b2571ebdb354c904819fb24399619ef
+
