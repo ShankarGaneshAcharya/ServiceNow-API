@@ -1,0 +1,13 @@
+Stanford production Login
+https://stanford.service-now.com/
+
+Testing 
+https://stanforddev.service-now.com
+
+Testing
+https://stanforddev2.service-now.com
+
+Zoom Call
+https://stanford.zoom.us/
+
+Timesheet

@@ -751,4 +751,58 @@ PastDate.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
 
 
-http://timeweb.stanford.edu/
+
+
+
+
+Client Script
+=============
+function onChange(control, oldValue, newValue, isLoading) {
+  if (isLoading || newValue == '') {
+     return;
+  }
+   
+ var ga = new GlideAjax('DateComparision');
+ ga.addParam('sysparm_name','newDateComparision');
+ ga.addParam('sysparm_date1', g_form.getValue('when_did_you_receive_your_first_dose'));
+ ga.addParam('sysparm_date2', g_form.getValue('when_did_you_receive_your_second_dose'));
+ ga.getXMLAnswer(ajaxProcessor);
+
+function ajaxProcessor(response){
+ //var datefield = g_form.getControl('when_did_you_receive_your_second_dose');
+ if (response==1){
+   g_form.showFieldMsg("when_did_you_receive_your_second_dose","The End Date must come after the Start Date","error");
+   
+    }
+ else if (response==0){
+ //g_form.showFieldMsg("u_second_dose_date","World","error");
+   return;
+    }
+} 
+
+  //Type appropriate comment here, and begin script below
+  
+}
+
+Script Includes
+===============
+var DateComparision = Class.create();
+DateComparision.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+	
+	newDateComparision: function(){
+    var date1 = this.getParameter('sysparm_date1');
+    var date2 = this.getParameter('sysparm_date2');
+    var date1gdt = new GlideDateTime(date1);
+    var date2gdt = new GlideDateTime(date2);
+
+		if (date2.before(date1)){
+			return 1;
+		}
+		else if (date1.after(date2)){
+			return 0;
+		}
+		
+},
+
+    type: 'DateComparision'
+});
