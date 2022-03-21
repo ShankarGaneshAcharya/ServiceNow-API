@@ -771,7 +771,7 @@ function onChange(control, oldValue, newValue, isLoading) {
 function ajaxProcessor(response){
  //var datefield = g_form.getControl('when_did_you_receive_your_second_dose');
  if (response==1){
-   g_form.showFieldMsg("when_did_you_receive_your_second_dose","The End Date must come after the Start Date","error");
+   g_form.showFieldMsg("when_did_you_receive_your_second_dose","The date of the second dose cannot be before the date for the first dose","error");
    
     }
  else if (response==0){
