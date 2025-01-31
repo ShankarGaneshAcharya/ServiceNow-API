@@ -432,7 +432,7 @@ Hardit Singh
 
 
 
-
+ 
 
 Video
 How to Fetch incident List to Service Portal || ServiceNow 
