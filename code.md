@@ -36,6 +36,7 @@ return;
 
 Add Stanford Plan to Apple Watch - SU - Set End User Email
 
+```
 function onChange(control, oldValue, newValue, isLoading) {
 if(isLoading || oldValue == newValue) {
 return;
@@ -49,7 +50,28 @@ var newUser = g_form.getReference('u_end_user_name', setInfo);
 function setInfo(newUser) {
 g_form.setValue('u_end_user_email', newUser.email);
 }
+```
 
 ---
 
-New GCP Service Request -
+New GCP Service Request - SU - VerifyProjectNameAndFillPIDOnChange
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   // Verify projectName using RegEx in onChange
+   // var project_name = g_form.getValue('projectName').toLowerCase();
+   var project_name = g_form.getValue('projectName');
+
+   var re = new RegExp("^[a-z][a-z0-9-]+[a-z0-9]$");
+   if(!re.test(project_name) || project_name.toString().length < 6 || project_name.toString().length > 24) {
+		var errstr='Please enter valid project name. It must be 6 to 24 characters. Can have lowercase letters, numbers, or hyphens. It must start with a lowercase letter and end with a letter or number. Trailing hyphens are prohibited.';
+		g_form.addErrorMessage(errstr);
+		g_form.setValue('projectName','');
+		return false;
+	}
+}
+```
