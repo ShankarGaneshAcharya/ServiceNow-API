@@ -1,22 +1,33 @@
 Form Name : Employee onboarding - Validate work email address (change)
-									Validate email address (submit)
+Validate email address (submit)
+
+---
 
 Update a Non-Employee (POI) Record - changes lower text to upper text
+
+---
+
 Request Ergonomics Services - SU - Missing Attachment - Missing attachment - on submit
+
+---
+
 Create website on Stanford Sites - SU - Alphanumeric- WebsitePurpose
 
+---
 
 Change/Cancel System Administration Service - SU - Instruction Character Limit
 
 function onSubmit() {
-  g_form.hideFieldMsg('changeCancellationInstructions', false);
-  var alpha = /^[\sA-Za-z0-9_@./#&+-]{0,450}$/;
-  var BusinessCase=g_form.getValue('changeCancellationInstructions');
-  //alert("value"+BusinessCase);
-  var res=alpha.test(BusinessCase);
-  if (!res) {
+g*form.hideFieldMsg('changeCancellationInstructions', false);
+var alpha = /^[\sA-Za-z0-9*@./#&+-]{0,450}$/;
+var BusinessCase=g_form.getValue('changeCancellationInstructions');
+//alert("value"+BusinessCase);
+var res=alpha.test(BusinessCase);
+if (!res) {
 g_form.showFieldMsg('changeCancellationInstructions', 'Special instructions has a field length limit of 450 characters or less.','error');
 return false;
-  }
+}
 return;
 }
+
+---
