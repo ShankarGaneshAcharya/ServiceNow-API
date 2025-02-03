@@ -75,3 +75,25 @@ function onChange(control, oldValue, newValue, isLoading) {
 	}
 }
 ```
+
+---
+
+Get Assistance with Remote Pay Questions - SU Format Currency
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+  var searchRegExp = /(\d)(?=(\d{3})+\.)/g;
+	var val = newValue.replaceAll('$','').replaceAll(',','');
+	if(isNaN(val))
+	{
+		g_form.showFieldMsg('requestedFTEAnnualSalary','Input is not correct','error');
+	}
+	g_form.setValue('requestedFTEAnnualSalary','$'+Number(val).toFixed(2).replace(searchRegExp, '$1,'));
+}
+```
+
+---
