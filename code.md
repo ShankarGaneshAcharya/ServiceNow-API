@@ -295,3 +295,136 @@ return;
 
 
 ```
+
+Request Computer Loaner - SU - Auto populate user field details
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    var user_id = g_form.getValue('requester');
+    var ga = new GlideAjax('AutoPopulateUserFieldDetailsUtil');
+    ga.addParam('sysparm_name', 'getUserFieldDetails');
+    ga.addParam('sysparm_user', user_id);
+    ga.getXML(EmployeeUserFieldDetailsLookup);
+
+    function EmployeeUserFieldDetailsLookup(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+        var result = JSON.parse(answer);
+        g_form.setValue('sunetID', result.sunet_id); //userSunetid is variable name in catalog item
+        g_form.setValue('phoneNumber', result.phone_number); //emailAddress is variable name in catalog item
+        g_form.setValue('email', result.email_id); //department is variable name in catalog item
+    }
+}
+```
+
+AutoPopulateUserFieldDetailsUtil
+
+```
+var AutoPopulateUserFieldDetailsUtil = Class.create();
+AutoPopulateUserFieldDetailsUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    getUserFieldDetails: function() {
+        var userName = this.getParameter('sysparm_user');
+        var user = new GlideRecord('sys_user');
+        var result = {
+            sunet_id: "",
+            phone_number: "",
+            email_id: "",
+        };
+        if (user.get(userName)) {
+            result.sunet_id = user.user_name.toString();
+            result.phone_number = user.phone.toString();
+            result.email_id = user.email.toString();
+            //toString();
+        }
+        return JSON.stringify(result);
+    },
+    type: 'AutoPopulateUserFieldDetailsUtil'
+});
+```
+
+---
+
+Reserve Space/Conference Room in Science & Engineering Quad - SU - don't allow past start date
+
+SU - don't allow past start date
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    if (newValue != '') {
+        var ga = new GlideAjax('SuRSCatDateValidation');
+        ga.addParam('sysparm_name', 'checkPastSDate');
+        ga.addParam('sysparm_date', newValue);
+        ga.getXML(parseScript);
+    }
+
+    function parseScript(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+        if (answer == 'past') {
+            g_form.clearValue('EventDateAndTimeStart');
+            g_form.showFieldMsg("EventDateAndTimeStart", "You can't select past date.", 'error');
+            return;
+        }
+    }
+
+}
+
+```
+
+SuRSCatDateValidation
+
+```
+var SuRSCatDateValidation = Class.create();
+SuRSCatDateValidation.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+	checkPastSDate: function() {
+		var publisheddateTime = new GlideDateTime(this.getParameter('sysparm_date'));
+		var publisheddate = publisheddateTime.getDate();
+		var todayDateTimeS = new GlideDateTime(gs.nowDateTime());
+		var todayDateS = todayDateTimeS.getDate();
+		if (publisheddate < todayDateS) {
+			return 'past';
+		} else
+			return 'not past';
+
+	},
+
+	getNumberOfDaysFromToday: function() {
+		var start = new GlideDateTime(this.getParameter('sysparm_date'));
+		var end = new GlideDateTime(gs.nowDateTime());
+		end = new GlideDateTime(end.getDate()+' 00:00:00');
+		var diff = GlideDateTime.subtract(end, start);
+		var days = diff.getRoundedDayPart();
+		return days;
+	},
+
+	checkPastFDate: function() {
+		var pdateTime = new GlideDateTime(this.getParameter('sysparm_date'));
+		var pdate = pdateTime.getDate();
+		var strtDate = this.getParameter('sysparm_stdate');
+		var todayDateTimeF = new GlideDateTime(gs.nowDateTime());
+		var todayDateF = todayDateTimeF.getDate();
+		if (pdate < todayDateF) {
+			return 'past';
+		} else {
+			if (strtDate > pdate) {
+				return 'greater';
+			} else {
+				return 'good';
+			}
+		}
+	},
+
+
+
+	type: 'SuRSCatDateValidation'
+});
+```
+
+---
