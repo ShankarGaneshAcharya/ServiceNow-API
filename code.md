@@ -428,3 +428,177 @@ SuRSCatDateValidation.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 ```
 
 ---
+
+Request GSB Media Services
+
+SU - Event Name - On Change
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   g_form.hideFieldMsg('changeCancellationInstructions', false);
+  var alpha = /^[\sA-Za-z0-9!@#$%^&*=+-_(),.?":{}|<>'"]{8,50}$/;
+  var BusinessCase=g_form.getValue('eventTitle');
+  //alert("value"+BusinessCase);
+  var res=alpha.test(BusinessCase);
+  if (!res) {
+g_form.showFieldMsg('eventTitle', ' Event Name must be between 8 and 50 characters in length.','error');
+//alert(' Event Name must be between 8 and 50 characters in length.');
+return false;
+  }
+return true;
+}
+
+```
+
+SU - GSB Compare start time vs. End time
+
+```
+function onSubmit() {
+var start_time = g_form.getValue('startTime');
+var end_time = g_form.getValue('end_time');
+
+answer = true;
+if (end_time < start_time || end_time == start_time ){
+alert("The Event End Time has to be greater than the Event Start Time.");
+//g_form.setValue('var_date_from', '');
+//g_form.setValue('var_date_to', '');
+return false;
+}
+}
+```
+
+SU - Event Title - on submit
+
+```
+function onSubmit() {
+  g_form.hideFieldMsg('changeCancellationInstructions', false);
+  var alpha = /^[\sA-Za-z0-9!@#$%^&*=+-_(),.?":{}|<>'"]{8,50}$/;
+  var BusinessCase=g_form.getValue('eventTitle');
+  //alert("value"+BusinessCase);
+  var res=alpha.test(BusinessCase);
+  if (!res) {
+g_form.showFieldMsg('eventTitle', ' Event Name must be between 8 and 50 characters in length.','error');
+alert(' Event Name must be between 8 and 50 characters in length.');
+return false;
+  }
+return true;
+}
+```
+
+SU - GSB Compare start and End times
+
+```
+function onSubmit() {
+var start_time = g_form.getValue('event_start_time');
+var end_time = g_form.getValue('event_end_time');
+
+if (end_time < start_time){
+alert("The Event End Time has to be greater than the Event Start Time.");
+return false;
+}
+answer = true;
+}
+
+```
+
+SU - Validate Event Start Date Time
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+			g_form.hideFieldMsg("eventDate", true);
+		    var ga = new GlideAjax("GSBMediaSRDateTimeUtils");
+           ga.addParam("sysparm_name", "ValidateEventStart");
+           ga.addParam("sysparm_eventstart", newValue);
+           ga.getXML(checkDate);
+
+function checkDate(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+
+	switch (answer.toString()) {
+		case 'lessZero':
+			g_form.clearValue('eventDate');
+			g_form.showFieldMsg("eventDate", "You entered: "+newValue+". Events cannot take place in the past.", 'error');
+			break;
+		case 'lessFalse':
+			g_form.showFieldMsg("eventDate", "We cannot guarantee that service requests made within 24hrs of the event start time will be seen and processed in time for your event.", 'error');
+			break;
+		case 'maxFalse':
+			g_form.clearValue('eventDate');
+			g_form.showFieldMsg("eventDate", "You entered: "+newValue+". Events cannot take place more than two years in the future", 'error');
+			break;
+		default:
+			return;
+	}
+}
+}
+
+```
+
+GSBMediaSRDateTimeUtils
+
+```
+var GSBMediaSRDateTimeUtils = Class.create();
+GSBMediaSRDateTimeUtils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+	ValidateEventStart : function() {
+		var eventDate = this.getParameter('sysparm_eventstart');
+		var nowTime = gs.nowDateTime();
+		var startDT = new GlideDate();
+		startDT.setDisplayValue(nowTime);
+		var endDT = new GlideDate();
+		endDT.setDisplayValue(eventDate);
+		var duration = new GlideDuration();
+		duration= GlideDate.subtract(startDT, endDT);
+		var diff = duration.getDayPart();
+		gs.log('diff '+diff);
+		gs.log("diff nowTime "+nowTime+"eventDate "+eventDate);
+		if(diff<0){
+			return 'lessZero';
+		}
+		else if(diff==1 || diff==0){
+			return 'lessFalse';
+		}
+		else{
+			var gdt = new GlideDateTime(nowTime);
+			gdt.addYears(2);
+			var maxTime = gdt.getDisplayValue();
+			if(eventDate>=maxTime){
+				return 'maxFalse';
+			}
+			else
+				return true;
+		}
+	},
+	type: 'GSBMediaSRDateTimeUtils'
+});
+```
+
+---
+
+Add CrashPlan Service - SU Limit Max Length
+
+```
+function onSubmit() {
+	var control = g_form.getControl('crashPlanOrg');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Requested CrashPlan Organization name field cannot have more than 150 characters");
+		return false;
+	}
+	control = g_form.getControl('numberOfUsers');
+	if ((isNaN( control.value) ||  control.value <= 0) &&  g_form.getValue("limitUsers") == "Yes")
+	{
+		g_form.addErrorMessage("How many users field must have a valid number greater than 0");
+		return false;
+	}
+}
+```
