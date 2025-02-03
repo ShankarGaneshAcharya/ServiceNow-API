@@ -97,3 +97,58 @@ function onChange(control, oldValue, newValue, isLoading) {
 ```
 
 ---
+
+Help with an ASSU Waiver - SU-Abort Submission
+
+```
+function onSubmit() {
+
+    var errorMessage = "This form is no longer active. If you need assistance, please review the instructions provided in the description.";
+
+    g_form.addErrorMessage(errorMessage);
+
+
+    return false;
+
+}
+```
+
+---
+
+Request LBRE Finance P2P Services - SU - ChangeSupplierNameUpperCase
+
+```
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue == '')
+      return;
+
+   var str = newValue.toUpperCase();
+   if (str != newValue)
+  g_form.setValue("ChangeSupplierName", str);
+}
+```
+
+---
+
+Add Mobile Service - SU - Validate No Less Than 8 Digits
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    //var fieldValue = 8;
+
+    // now check the length
+    if (newValue.length < 8) {
+
+        //alert("Please enter at least 8 digits.");
+        g_form.clearValue('currentDeviceIMEIorESNorMEID');
+		g_form.showFieldMsg('currentDeviceIMEIorESNorMEID',"Please enter at least 8 digits.",'error', true);
+
+    }
+}
+```
+
+---
