@@ -31,3 +31,21 @@ return;
 }
 
 ---
+
+Add Stanford Plan to Apple Watch - SU - Set End User Email
+
+function onChange(control, oldValue, newValue, isLoading) {
+if(isLoading || oldValue == newValue) {
+return;
+}
+else {
+var newUser = g_form.getReference('u_end_user_name', setInfo);
+}
+}
+
+//reference is passed into callback as first arguments
+function setInfo(newUser) {
+g_form.setValue('u_end_user_email', newUser.email);
+}
+
+---
