@@ -152,3 +152,146 @@ function onChange(control, oldValue, newValue, isLoading) {
 ```
 
 ---
+
+Add Bulk Assets - SU File Validations
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+	if (isLoading || newValue == '') {
+		return;
+	}
+	g_form.setValue('enable_submit', 'false');
+	// 	if (g_form.getValue('data_source') != '') {
+	var cat_id = g_form.getValue('sysparm_item_guid');
+	var gx = new GlideAjax('SUValidateAttachment');
+	gx.addParam('sysparm_name', 'checkFile');
+	gx.addParam('sysparm_cat_id', cat_id);
+	//gx.addParam('sysparm_ds', g_form.getValue('data_source'));
+	gx.getXML(getResponse);
+
+	// 	} else {
+	// 		alert('Please select the data source');
+	// 		g_form.clearValue('select_attachment');
+	// 	}
+}
+
+function getResponse(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+
+	if (answer != "") {
+		g_form.clearValue('select_attachment');
+
+		g_form.addErrorMessage(answer);
+	}else{
+		g_form.setValue('enable_submit', 'true');
+	}
+
+}
+
+```
+
+---
+
+Get Assistance with Supplemental Pay Requests -
+
+SU Format Percentage
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+var searchRegExp = /(\d)(?=(\d{3})+\.)/g;
+	var val = newValue.replaceAll('%','');
+	if(isNaN(val) || val > 100)
+	{
+		g_form.clearValue('TARRequestPercentageAmount');
+		g_form.showFieldMsg('TARRequestPercentageAmount','Input is not correct','error');
+	}
+	else
+	g_form.setValue('TARRequestPercentageAmount', Number(val).toFixed(2).replace(searchRegExp, '1,')+'%');
+}
+```
+
+SU Format Currency
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+var searchRegExp = /(\d)(?=(\d{3})+\.)/g;
+	var val = newValue.replaceAll('$','').replaceAll(',','');
+	if(isNaN(val))
+	{
+		g_form.showFieldMsg('oneTimeAmount','Input is not correct','error');
+	}
+	g_form.setValue('oneTimeAmount','$'+Number(val).toFixed(2).replace(searchRegExp, '$1,'));
+}
+```
+
+SU - Validate Start Date1
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    if (g_form.getValue('effectiveEndDate') != '') {
+        if (g_form.getValue('effectiveStartDate') > g_form.getValue('effectiveEndDate')) {
+            g_form.clearValue('effectiveStartDate');
+            g_form.showFieldMsg('effectiveStartDate', getMessage("Effective Start Date can't be later than Effective End Date."), 'error');
+        }
+        if (g_form.getValue('effectiveStartDate') == g_form.getValue('effectiveEndDate')) {
+            g_form.clearValue('effectiveStartDate');
+            g_form.showFieldMsg('effectiveStartDate', getMessage("Effective Start Date can't be same as Effective End Date."), 'error');
+        }
+    }
+}
+```
+
+SU - Validate End Date
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    if (g_form.getValue('effectiveEndDate') < g_form.getValue('effectiveStartDate')){
+        g_form.clearValue('effectiveEndDate');
+    g_form.showFieldMsg('effectiveEndDate', getMessage("Effective End Date can't be earlier than Effective Start Date."), 'error');
+	}
+	if (g_form.getValue('effectiveEndDate') == g_form.getValue('effectiveStartDate')){
+        g_form.clearValue('effectiveEndDate');
+    g_form.showFieldMsg('effectiveEndDate', getMessage("Effective End Date can't be same as Effective Start Date."), 'error');
+	}
+}
+```
+
+---
+
+Upload Assets to SUHP Stockroom - Price numeric only
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   var alpha = /^[\d\.]*$/;
+	//var alpha = /^\d*$/;
+
+ var cost=g_form.getValue('per_unit_cost_including_tax_and_shipping');
+  var res=alpha.test(cost);
+  if (!res) {
+  alert ("Only numeric characters can be entered in the 'Per unit cost (incl. tax and shipping)' field.");
+  //g_form.showFieldMsg('per_unit_cost_including_tax_and_shipping', 'Invalid input', 'error');
+  g_form.clearValue('per_unit_cost_including_tax_and_shipping');
+return false;
+  }
+return;
+}
+
+
+```
