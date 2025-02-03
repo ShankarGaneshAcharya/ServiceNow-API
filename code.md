@@ -602,3 +602,68 @@ function onSubmit() {
 	}
 }
 ```
+
+---
+
+Change or Cancel Point-to-point Circuit Service
+
+SU Limit Max Length
+
+```
+
+function onSubmit() {
+	var control = g_form.getControl('carrier_name');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Carrier Name / Point-of-sale Number field cannot have more than 150 characters");
+		return false;
+	}
+	control = g_form.getControl('carrier_circuit_number');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Carrier Circuit ID/Phone Number field cannot have more than 150 characters");
+		return false;
+	}
+
+	control = g_form.getControl('select_room');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Telecom room Field cannot have more than 150 characters");
+		return false;
+	}
+	control = g_form.getControl('select_room_2');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Telecom room Field cannot have more than 150 characters");
+		return false;
+	}
+	control = g_form.getControl('tso_jack_number');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Rack/Equipment/Port Information Field cannot have more than 150 characters");
+		return false;
+	}
+	control = g_form.getControl('tso_jack_number_2');
+	if (control.value.length > 150)
+	{
+		g_form.addErrorMessage("Rack/Equipment/Port Information Field cannot have more than 150 characters");
+		return false;
+	}
+}
+
+```
+
+---
+
+Request a Food Truck - SU - Fetch Email ID Load
+
+```
+function onLoad() {
+      var userName = g_form.getReference('name', fetchDetails);
+
+    function fetchDetails(userName) {
+        g_form.setValue('email', userName.email);
+    }
+
+}
+```
