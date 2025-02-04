@@ -1267,3 +1267,45 @@ return true;
 
 }
 ```
+
+Cancel A Scheduled Payment
+
+SU Validate Amount Of Payment
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    if (!newValue.match(/^\d+\.\d{0,2}$/)) {
+        g_form.showErrorBox("AmountOfPayment", "Input is not correct.");
+    }
+
+}
+```
+
+---
+
+Change or Cancel Mobile Service
+
+SU - Validate No Less Than 8 Digits
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    //var fieldValue = 8;
+
+    // now check the length
+    if (newValue.length < 8) {
+
+        //alert("Please enter at least 8 digits.");
+        g_form.clearValue('deviceIMEI');
+		g_form.showFieldMsg('deviceIMEI',"Please enter at least 8 digits.",'error', true);
+
+    }
+}
+```
