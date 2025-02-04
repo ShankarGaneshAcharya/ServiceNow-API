@@ -1309,3 +1309,193 @@ function onChange(control, oldValue, newValue, isLoading) {
     }
 }
 ```
+
+---
+
+UIT Data Center - Device Change/Cancel Request
+
+SU - One Check box is required
+
+```
+function onSubmit(){
+    var change = g_form.getValue('changeCancelDevice');
+	//alert (change);
+	if (change == 'change')
+		{
+    var mandatoryVars = 'changeDeviceName,changeLocation,changeCabling,changeContactInfo,changeBilling';
+    var mandatoryCount = 1;
+
+    var passed = forceMandatoryCheckboxes(mandatoryVars, mandatoryCount);
+    if(!passed){
+        //Abort the submit
+        alert('You must select at least one "What type of change are you requesting?" check box.');
+        return false;
+    }
+}
+
+function forceMandatoryCheckboxes(mandatory, count){
+    //Split the mandatory variable names into an array
+    mandatory = mandatory.split(',');
+    var answer = false;
+    var varFound = false;
+    var numTrue = 0;
+    //Check each variable in the array
+    for(x=0;x<mandatory.length;x++){
+        //Check to see if variable exists
+        if(g_form.getControl(mandatory[x])){
+            varFound = true;
+            //Check to see if variable is set to 'true'
+            if(g_form.getValue(mandatory[x]) == 'true'){
+                numTrue ++;
+                //Exit the loop if we have reached required number of 'true'
+                if(numTrue >= count){
+                    answer = true;
+                    break;
+                }
+            }
+        }
+    }
+    //If we didn't find any of the variables allow the submit
+    if(varFound == false){
+        answer = true;
+    }
+    //Return true or false
+    return answer;
+}
+}
+```
+
+---
+
+Upload My COVID Vaccination Documentation
+
+---
+
+Request for Classroom Support
+
+SU Validate Date
+
+Date and Time validation
+
+```
+
+function onChange(control, oldValue, newValue, isLoading) {
+	if (isLoading || newValue == '') {
+		return;
+	}
+
+	if (newValue != '') {
+		var ga = new GlideAjax('SuRSCatDateValidation');
+		ga.addParam('sysparm_name', 'checkPastOrBusDateFuture');
+		ga.addParam('sysparm_date', newValue);
+		ga.getXML(parseScript);
+	}
+
+	function parseScript(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		if (answer == -1) {
+			g_form.clearValue('preferredDateAndTime');
+			g_form.showFieldMsg("preferredDateAndTime", "Please enter a date that is not in the past.",'error');
+		}else if(answer == 0){
+			g_form.clearValue('preferredDateAndTime');
+			g_form.showFieldMsg("preferredDateAndTime", "Please select a date that is at least 1 business day from today.",'error');
+		}
+	}
+
+}
+
+```
+
+---
+
+Cloud Security Management (Wiz)
+
+SU-Stanford email domain validation
+
+```
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    //Type appropriate comment here, and begin script below
+
+    var email = g_form.getValue('whatStanfordEmailDistributionOrMailingListShouldWeUseToSendReports');
+    if (!email.match(/^[a-zA-Z0-9._%+-]+@stanford\.edu$/)) {
+        g_form.addErrorMessage('Please enter a valid email ID');
+        g_form.setValue('whatStanfordEmailDistributionOrMailingListShouldWeUseToSendReports', '');
+    }
+
+}
+```
+
+---
+
+Request for eProtocol Help
+
+SU-Change contact labels
+
+```
+
+function onLoad() {
+
+	if(g_user.userID) {
+		var ga = new GlideAjax('SUUsersAjax');
+		ga.addParam('sysparm_name', 'getContactInfo');
+		ga.addParam('sysparm_user_id', g_user.userID);
+
+		ga.getXML(ajaxResponse);
+	}
+
+	function ajaxResponse(serverResponse) {
+		//<option value="" selected="SELECTED">-- None --</option>
+		var output = '';
+		var arrInfo = serverResponse.responseXML.getElementsByTagName('contact_info');
+		//g_form.clearOptions('PreferredContactMethod');
+		var i = 0;
+		for(i = 0; i < arrInfo.length; i++) {
+			var name = arrInfo[i].getAttribute('name');
+			var value = arrInfo[i].getAttribute('value');
+			if(value != '' && value != null) {
+				g_form.addOption('PreferredContactMethod', value, name + ': ' + value, 1);
+			}
+			//output += name + ' = ' + value + '\n';
+		}
+		//g_form.addOption('PreferredContactMethod', 'OtherPhone', 'Other phone (please enter)');
+		//g_form.addOption('PreferredContactMethod', 'none', '-- None --', 0);
+
+		//alert(output);
+	}
+}
+
+```
+
+SUUsersAjax
+
+```
+
+var SUUsersAjax = Class.create();
+SUUsersAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getContactInfo: function() {
+        var grUsers = new GlideRecord("sys_user");
+        if (grUsers.get("sys_id", this.getParameter('sysparm_user_id'))) {
+            return this._addInfo("Stanford email", grUsers.email);
+
+        }
+    },
+
+    _addInfo: function(name, value) {
+        var objUserInfo = this.newItem("contact_info");
+        objUserInfo.setAttribute("name", name);
+        objUserInfo.setAttribute("value", value);
+    },
+    type: 'SUUsersAjax'
+});
+
+```
+
+---
+
+Request New GSB Computer
+
+---
