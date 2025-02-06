@@ -22,7 +22,6 @@ Create website on Stanford Sites - SU - Alphanumeric- WebsitePurpose
 Change/Cancel System Administration Service - SU - Instruction Character Limit
 
 ```
-
 function onSubmit() {
 g*form.hideFieldMsg('changeCancellationInstructions', false);
 var alpha = /^[\sA-Za-z0-9*@./#&+-]{0,450}$/;
